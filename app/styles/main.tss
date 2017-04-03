@@ -2,3 +2,7 @@
 ".container" : {
   
 }
+
+"#opdagTab":{
+	icon:"images/earth-globe-with-grid-2.png"
+}
