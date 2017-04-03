@@ -10,6 +10,9 @@
 
 "#label": {
 	font: {
-		fontSize: 12
-	}
+		fontSize: 80,
+		fontFamily: "Lobster_1_4",
+	},
+	
+	color: "#59D3CA"
 }
