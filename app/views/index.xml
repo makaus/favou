@@ -1,5 +1,7 @@
 <Alloy>
-	<Window class="container">
+	<Window class="container" id="login">
 		<Label id="label">Favou</Label>
+		<LoginButton id="fbLogin" module="facebook" top="25" />
+		<Label id="policy">Velkommen til Favou.\n Ved at logge ind med Facebook, giver du samtidig din samtykke til at vi kan hente dine profiloplysninger. Vi poster aldrig noget på dine vegne.</Label>
 	</Window>
 </Alloy>

@@ -46,3 +46,6 @@ ACS.Users.login({
 
 })();
 
+// Make API calls to Alloy.Globals.Facebook
+Alloy.Globals.Facebook = require('facebook');
+
