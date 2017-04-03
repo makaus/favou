@@ -1,5 +1,5 @@
 ".container": {
-	backgroundColor:"white"
+	backgroundColor:"#192935"
 }
 
 "Label": {
