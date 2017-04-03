@@ -11,7 +11,10 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
+
     <guid>39a45bb8-f808-42af-9000-cdf9e7f9ee9f</guid>
+
+
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <property name="run-on-main-thread" type="bool">true</property>
     <ios>

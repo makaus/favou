@@ -1,5 +1,3 @@
-function doClick(e) {
-    alert($.label.text);
-}
-
-$.index.open();
+ var Window = Alloy.createController('main').getView();
+    Window.open();
+//$.index.open();
