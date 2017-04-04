@@ -1,5 +1,55 @@
 <Alloy>
-	<Window class="container">
-		<Label text="Profil" color="white"/>
+	<Window id="container" layout="vertical">
+		<Label id="profile" top="20" width="100%">Profil</Label>
+		<View id="top" layout="horizontal" height="40%">
+			<View id="left" width="55%">
+				<ImageView id="picture" image="/images/Dr-Halland-Round-Profile-Pic.png" height="150" top="30"></ImageView>
+			</View>
+			
+			<View id="right" layout="vertical" width="45%" top="40">
+				<Label class="text" width="100%">Karl Holger</Label>
+				<Label class="text" top="15" width="100%">28 år</Label>
+				<Label class="text" top="15" width="100%">Odense C</Label>
+			</View>
+		</View>
+		
+		<Label id="interests" top="10" width="100%">Interesser</Label>
+		<View id="bot" layout="vertical" width="90%" top="30">
+			<View id="row1" layout="horizontal" width="100%" height="30">
+				<Switch id="music" value="false" onChange="outputState"/>
+				<Label class="text2" width="23%">Musik</Label>
+				<Switch id="handwork" value="false" onChange="outputState"/>
+				<Label class="text2" width="23%">Håndarbejde</Label>
+				<Switch id="entertainment" value="false" onChange="outputState"/>
+				<Label class="text2" width="23%">Underholdning</Label>
+			</View>
+			
+			<View id="row2" layout="horizontal" width="100%" height="30">
+				<Switch id="animals" value="false" onChange="outputState"/>
+				<Label class="text2" width="23%">Dyr</Label>
+				<Switch id="gardenwork" value="false" onChange="outputState"/>
+				<Label class="text2" width="23%">Havearbejde</Label>
+				<Switch id="socialwork" value="false" onChange="outputState"/>
+				<Label class="text2" width="23%">Socialt arbejde</Label>
+			</View>
+			
+			<View id="row3" layout="horizontal" width="100%" height="30">
+				<Switch id="cooking" value="false" onChange="outputState"/>
+				<Label class="text2" width="23%">Madlavning</Label>
+				<Switch id="mechanics" value="false" onChange="outputState"/>
+				<Label class="text2" width="23%">Mekanik</Label>
+				<Switch id="nature" value="false" onChange="outputState"/>
+				<Label class="text2" width="23%">Natur</Label>
+			</View>
+			
+			<View id="row4" layout="horizontal" width="100%" height="30">
+				<Switch id="art" value="false" onChange="outputState"/>
+				<Label class="text2" width="23%">Kunst</Label>
+				<Switch id="sport" value="false" onChange="outputState"/>
+				<Label class="text2" width="23%">Sport</Label>
+				<Switch id="fashion" value="false" onChange="outputState"/>
+				<Label class="text2" width="23%">Mode</Label>
+			</View>
+		</View>
 	</Window>
 </Alloy>
