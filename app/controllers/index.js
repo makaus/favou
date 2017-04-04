@@ -28,6 +28,7 @@ var fb = require('facebook');
         alert('logged out');
     });
 
- 	
+var main = Alloy.createController('profile').getView();
+main.open(); 	
 
-$.login.open();
+// $.login.open();

@@ -1,4 +1,5 @@
 <Alloy>
-	<Window class="container">
+	<Window class="container" layout="vertical">
+		<Label id="profile">Profil</Label>
 	</Window>
 </Alloy>
