@@ -1,0 +1,28 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+		<ScrollView layout="vertical">
+		<View width="100%" layout="vertical">
+			<Label class="createTaskLabel" width="Ti.UI.SIZE" top="20">Opret opgave</Label>
+			<TextField class="taskField" hintText="Titel" top="25" width="80%" height="40"/>
+			<TextField class="taskField" hintText="Adresse" top="25" width="80%" height="40"/>
+			<View layout="horizontal" top="25" height="40" width="80%">
+				<Label class="taskField" id="dato" text=" Dato" width="60%" height="40"/>
+				<Button id="date" title="Vælg dato" width="40%" height="40"/>
+			</View>
+			<TextField class="taskField" hintText="Person behov" top="25" width="80%" height="40"/>
+			<!--<TextField class="taskField" hintText="Kategori" top="25" width="80%" height="40"/>-->
+			<Picker id="pickerCategory" top="25" width="80%" height="40">
+            <PickerColumn id="categoryDate">
+                <PickerRow title="Kategori"/>
+                <PickerRow title="Musik"/>
+                <PickerRow title="Madlavning"/>
+                <PickerRow title="Natur"/>
+                <PickerRow title="Socialt arbejde"/>
+            </PickerColumn>
+        	</Picker>
+			<TextField class="taskField" hintText="Beskrivelse af opgave" top="25" width="80%" height="40"/>
+			<Button class="taskButton" id="dateButton" title="Opret" top="25" height="40" width="30%"/>
+		</View>
+		</ScrollView>
+	</Window>
+</Alloy>
