@@ -1,8 +1,27 @@
-
 ".container" : {
   
 }
 
-"#opdagTab":{
-	icon:"images/earth-globe-with-grid-2.png"
+"TabGroup":{
+	backgroundColor: "#192935"
+}
+
+"Tab":{
+	backgroundColor: "white"
+}
+
+"#opdagTabs[platform=android]":{
+	icon:"/images/earth-globe-with-grid-2.png"
+}
+
+"#tilmeldteOpgaverTabs[platform=android]":{
+	icon:"/images/checked-box.png"
+}
+
+"#profilTabs[platform=android]":{
+	icon:"/images/forum-user.png"
+}
+
+"#indstillingerTabs[platform=android]":{
+	icon:"/images/settings-work-tool.png"
 }
