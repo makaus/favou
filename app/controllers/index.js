@@ -28,14 +28,6 @@ var fb = require('facebook');
     fb.addEventListener('logout', function(e) {
         alert('logged out');
     });
-<<<<<<< HEAD
 	var main = Alloy.createController('createTask').getView();
 	main.open();
 //$.login.open();
-=======
-
-var main = Alloy.createController('main').getView();
-main.open(); 	
-
-// $.login.open();
->>>>>>> 9b6172ff49f751b311638810d0b3a85487d972fa
