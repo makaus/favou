@@ -1,3 +1,7 @@
+"Window[platform=android]" : {
+    theme: 'Theme.NoActionBar'
+}
+
 ".container": {
 	backgroundColor:"#192935",
 	layout: "vertical"

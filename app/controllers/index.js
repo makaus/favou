@@ -14,6 +14,7 @@ var fb = require('facebook');
         // Make sure to handle all possible cases of this event
         if (event.success) {
         	var main = Alloy.createController('main').getView();
+ 			$.login.close();
  			main.open();
             // alert('login from uid: '+event.uid+', name: '+JSON.parse(event.data).name);
             // label.text = 'Logged In = ' + fb.loggedIn;
