@@ -3,7 +3,8 @@
 }
 
 "TabGroup":{
-	backgroundColor: "#192935"
+	backgroundColor: "#192935",
+	title: ""
 }
 
 "Tab":{

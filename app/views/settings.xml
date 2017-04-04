@@ -1,15 +1,5 @@
 <Alloy>
-	<Window class="container" layout="vertical">
-		<Label id="profile">Profil</Label>
-		<View id="toprow" layout="horizontal">
-			<View id="left" width="50%">
-				<ImageView id="picture" image="/images/Dr-Halland-Round-Profile-Pic.png"/>
-			</View>
-			<View id="right" layout="vertical" width="50%">
-				<Label id="name">Karl Holger</Label>
-				<Label id="age">28 år</Label>
-				<Label id="city">Odense C</Label>
-			</View>
-		</View>
+	<Window class="container">
+		<Label id="hello">Indstillinger</Label>
 	</Window>
 </Alloy>
