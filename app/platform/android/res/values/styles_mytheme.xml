@@ -76,5 +76,4 @@
         <item name="popupMenuStyle">@style/PopupMenu.Mytheme</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Mytheme</item>
     </style>
-
 </resources>
