@@ -1,2 +1,26 @@
-".container" : {  
+".container" : {
+ backgroundColor: "#192935" 
+}
+
+
+".horizontal": {
+	layout: "horizontal"
+}
+
+".vertical": {
+	layout: "vertical"
+}
+
+".label_text": {
+	font: {
+		fontWeight: "bold",
+	}
+}
+
+".title": {
+	color: "#59D3CA",
+	font: {
+		fontFamiliy: "Arial Black",
+		fontSize: "20dp" 
+	}
 }

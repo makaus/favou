@@ -1,5 +1,30 @@
 <Alloy>
-	<Window class="container" layout="vertical">
-		<Label text="Opdag" color="white"/>
+	<Window class="container" layout="vertical" onOpen="showCurrentPosition"  >
+			<Label class="title">Opdag</Label>
+			<View borderWidth="0.5"  class="horizontal" width="100%" height="15%">
+				<View  backgroundColor="#fff"   width="33.3%" color="#000">
+					<Label color="#000" class="label_text">I Nærheden</Label></View>
+				<View  backgroundColor="#fff"   borderColor="#000"  width="33.3%" color="#000">
+					<Label color="#000" class="label_text">I Nærheden</Label></View>
+				<View  backgroundColor="#fff"     width="33.3%" color="#000" >
+					<Label color="#000" class="label_text">I Nærheden</Label></View>  	
+			
+			</View>
+					<!-- Android: Add MenuItem with ActionView for search -->
+		<Menu platform="android" class="vertical">
+
+			<!-- We give it an id so we can collapse the ActionView in the controller -->
+			<MenuItem id="searchMenu">
+
+				<!-- On Android menu items can contain a view -->
+				<ActionView>
+
+					<!-- Since there are multiple SearchView objects, we need to specificy the namespace -->
+					<SearchView ns="Ti.UI.Android" hintText="Location" onSubmit="geocodeLocation" />
+
+				</ActionView>
+
+			</MenuItem>
+		</Menu>
 	</Window>
 </Alloy>
