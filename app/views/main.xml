@@ -2,6 +2,7 @@
 	<TabGroup>
 		<Tab title="Opdag">
 			<Require src="discover" id="opdagTab"/>
+			
 		</Tab>
 		<Tab title="Tilmeldte Opgaver">
 			<Require src="tasks" id="tilmeldteopgaverTab"/>
@@ -13,4 +14,6 @@
 			<Require src="settings" id="indstillingerTab"/>
 		</Tab>
 	</TabGroup>
-</Alloy>
+	
+	
+</Alloy> 
