@@ -3,7 +3,7 @@
 		<ScrollView layout="vertical">
 		<View width="100%" layout="vertical">
 			<Label class="createTaskLabel" width="Ti.UI.SIZE" top="20">Opret opgave</Label>
-			<TextField class="taskField" hintText="Titel" top="25" width="80%" height="40"/>
+			<TextField class="taskField" id="titleTask" hintText="Titel" top="25" width="80%" height="40"/>
 			<TextField class="taskField" hintText="Adresse" top="25" width="80%" height="40"/>
 			<View layout="horizontal" top="25" height="40" width="80%">
 				<Label class="taskField" id="dato" text=" Dato" width="60%" height="40"/>
