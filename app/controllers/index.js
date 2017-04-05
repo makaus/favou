@@ -13,8 +13,12 @@ var fb = require('facebook');
         // You *will* get this event if loggedIn == false below
         // Make sure to handle all possible cases of this event
         if (event.success) {
+
         //	var main = Alloy.createController('main').getView();
  		//	main.open();
+        	var main = Alloy.createController('main').getView();
+ 			$.login.close();
+ 			main.open();
             // alert('login from uid: '+event.uid+', name: '+JSON.parse(event.data).name);
             // label.text = 'Logged In = ' + fb.loggedIn;
         } else if (event.cancelled) {
@@ -31,4 +35,6 @@ var fb = require('facebook');
  		var main = Alloy.createController('main').getView();
  			main.open();
 
+	var main = Alloy.createController('createTask').getView();
+	main.open();
 //$.login.open();

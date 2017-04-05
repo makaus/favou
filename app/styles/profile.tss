@@ -1,4 +1,100 @@
+".container" : {  
+}
 
-".container" : {
-  
+"#profile": {
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	color: "#59D3CA",
+	font: {
+		fontFamily: "Lobster_1_4",
+		fontSize: "20dp"
+	}
+}
+
+".text": {
+	color: "white",
+	font: {
+		fontFamily: "Lobster_1_4",
+		fontSize: "20dp"
+	}
+}
+
+"#interests": {
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	color: "#59D3CA",
+	font: {
+		fontFamily: "Lobster_1_4",
+		fontSize: "20dp"
+	}
+}
+
+".text2": {
+	color: "white",
+	font: {
+		fontFamily: "Roboto-Light",
+		fontSize: "12dp"
+	}
+}
+
+"#row1": {
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+"#row2": {
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+"#row3": {
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+"#row4": {
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+"#music": {
+	style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX
+}
+
+"#handwork": {
+	style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX
+}
+
+"#entertainment": {
+	style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX
+}
+
+"#animals": {
+	style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX
+}
+
+"#gardenwork": {
+	style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX
+}
+
+"#socialwork": {
+	style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX
+}
+
+"#cooking": {
+	style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX
+}
+
+"#mechanics": {
+	style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX
+}
+
+"#nature": {
+	style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX
+}
+
+"#art": {
+	style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX
+}
+
+"#sport": {
+	style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX
+}
+
+"#fashion": {
+	style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX
 }
