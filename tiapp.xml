@@ -11,7 +11,9 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>f22b3dd1-b467-47f5-9333-46dd817a8dfe</guid>
+
+    <guid>39a45bb8-f808-42af-9000-cdf9e7f9ee9f</guid>
+
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <property name="run-on-main-thread" type="bool">true</property>
     <ios>
@@ -66,6 +68,7 @@
         <module platform="commonjs">ti.cloud</module>
         <module platform="android">facebook</module>
         <module platform="iphone">facebook</module>
+        <module platform="android">ti.map</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>

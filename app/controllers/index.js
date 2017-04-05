@@ -7,7 +7,7 @@ var fb = require('facebook');
  fb.permissions = ['public_profile','email'];
  fb.initialize();
  fb.authorize();
-
+  
 var fb = require('facebook');
     fb.addEventListener('login', function(event) {
         // You *will* get this event if loggedIn == false below
@@ -45,4 +45,5 @@ var fb = require('facebook');
     });
 	var main = Alloy.createController('main').getView();
 	main.open();
+
 //$.login.open();
