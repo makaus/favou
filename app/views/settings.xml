@@ -1,5 +1,8 @@
 <Alloy>
-	<Window class="container">
-		<Label id="hello">Indstillinger</Label>
+	<Window class="container" layout="vertical">
+		<View id="verytop" layout="horizontal">
+			<Label id="discover" top="20" width="100%">Opdag</Label>
+			
+		</View>
 	</Window>
 </Alloy>

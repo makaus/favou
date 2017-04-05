@@ -1,10 +1,11 @@
 "Window[platform=android]" : {
-    theme: 'Theme.NoActionBar'
+    theme: 'Theme.NoActionBar',
+    title: ""
 }
 
 ".container": {
 	backgroundColor:"#192935",
-	layout: "vertical"
+	layout: "vertical",
 }
 
 "Label": {
