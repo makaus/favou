@@ -16,7 +16,7 @@ $.date.addEventListener('click', function() {
 	            Ti.API.info('user selected date: ' + e.value);
 				var selectedMonthName = months[(e.value.getMonth())];
 	            //console.log((e.value.getMonth() + 1) + '/' + e.value.getDate() + '/' + e.value.getFullYear());
-	            $.dato.text = ' ' + selectedMonthName + ' ' + e.value.getDate() + ' ' + e.value.getFullYear();
+	            $.dato.text = ' ' + e.value.getDate() + ' ' + selectedMonthName + ' ' + e.value.getFullYear();
 	        }
 	    }
 	});
