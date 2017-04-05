@@ -4,7 +4,7 @@
 
 "TabGroup":{
 	backgroundColor: "#192935",
-	title:""
+	title: ""
 }
 
 "Tab":{
