@@ -11,9 +11,7 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-
-    <guid>f22b3dd1-b467-47f5-9333-46dd817a8dfe</guid>
-
+    <guid>97313405-f39f-4a39-9ddd-dcbe0b7b59cb</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <property name="run-on-main-thread" type="bool">true</property>
     <ios>
@@ -49,7 +47,8 @@
                 <activity
                     android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
                     android:label="YourAppName"
-                    android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+                    android:name="com.facebook.FacebookActivity" 
+                    android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
                 <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
                 <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAj2YhU1DriMzzzGXZsQ2rYIJq-K2_tEC0"/>
             </application>

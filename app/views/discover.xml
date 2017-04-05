@@ -1,6 +1,4 @@
-<Alloy>
-
-	<Window class="container" layout="vertical" onOpen="showCurrentPosition">
+<Alloy><Window class="container" layout="vertical" onOpen="showCurrentPosition">
 			<Label class="title">Opdag</Label>
 			<View borderWidth="0.5"  class="horizontal" width="100%" height="15%">
 				<View  backgroundColor="#fff"   width="33.3%" color="#000">
@@ -12,7 +10,7 @@
 			
 			</View>
 			<View>
-	         <View module="ti.map" id="map" onLongclick="reverseGeocode">
+	        <View module="ti.map" id="map" onLongclick="reverseGeocode">
 
 				<!-- Maps can contain child views as overlays -->
 				<Button class="typeBtn" onClick="changeMapType">Map Type</Button>

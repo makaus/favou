@@ -46,4 +46,7 @@ var fb = require('facebook');
 	var main = Alloy.createController('main').getView();
 	main.open();
 
-//$.login.open();
+
+	var main = Alloy.createController('main').getView();
+	main.open();
+// $.login.open();
