@@ -26,7 +26,6 @@ if (OS_ANDROID) {
 
   // Open the window. We didn't give it an id in the view, but it defaults to
   // the name of the controller/view.
-  //$.index.open();
 
 })(arguments[0] || {});
 
