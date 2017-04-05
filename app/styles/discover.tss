@@ -7,10 +7,6 @@
 	layout: "horizontal"
 }
 
-".vertical": {
-	layout: "vertical"
-}
-
 ".label_text": {
 	font: {
 		fontWeight: "bold",

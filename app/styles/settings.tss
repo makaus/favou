@@ -10,3 +10,10 @@
 		fontSize: "20dp"
 	}
 }
+
+".label_text": {
+	font: {
+		fontFamily: "Lobster_1_4",
+		fontSize: "16dp"
+	}
+}
