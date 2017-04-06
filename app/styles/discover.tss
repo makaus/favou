@@ -3,9 +3,6 @@
 }
 
 
-".horizontal": {
-	layout: "horizontal"
-}
 
 ".discover": {
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
@@ -24,13 +21,6 @@
 	}
 }
 
-".title": {
-	color: "#59D3CA",
-	font: {
-		fontFamiliy: "Arial Black",
-		fontSize: "20dp" 
-	}
-}
 
 '#map': {
 
