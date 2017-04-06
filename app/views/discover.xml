@@ -25,7 +25,14 @@
 				<Button class="typeBtn" onClick="changeMapType">Map Type</Button>
 
 			</View>
-        	</View>
+			<View>
+		        <View module="ti.map" id="map" height="400">
+	
+					<!-- Maps can contain child views as overlays -->
+					<Button class="typeBtn" onClick="changeMapType">Map Type</Button>
+	
+				</View>
+  	</View>
         	
 	</Window>
 </Alloy>
