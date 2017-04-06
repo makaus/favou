@@ -1,5 +1,10 @@
 // DEPENDENCIES
 
+function gotoAdd(e) {
+ 	var createTask = Alloy.createController('createTask').getView();
+ 	createTask.open();
+ }
+
 var map = require('ti.map');
 var permissions = require('permissions');
 
