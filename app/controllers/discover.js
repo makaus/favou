@@ -58,11 +58,9 @@ function showCurrentPosition() {
         return alert(e.error || 'Could not find your position.');
       }
 
-      // Continue the same process as when the user longpresses on the map,
-      // passing `true` to let it center the map
-      reverseGeocode(e.coords, true);
+      
+      
     });
-
   });
 }
 
@@ -73,35 +71,6 @@ function showCurrentPosition() {
  * @param  {Float}   coords.longitude  Longitude
  * @param  {boolean} center            Set to true to center the map on the position
  */
-function reverseGeocode(coords, center) {
-  'use strict';
-
-  // Don't re-use coords since reverseGeocode() is also a callback for two
-  // events in the view, which has other properties as well that we don't need.
-  var location = {
-    latitude: coords.latitude,
-    longitude: coords.longitude
-  };
-
-  // Reverse geocode the position
-  Ti.Geolocation.reverseGeocoder(location.latitude, location.longitude, function(e) {
-
-    if (!e.success || e.error) {
-      return alert(e.error || 'Could not reverse geocode the position.');
-    }
-
-    // Use the address of the first place found for the title
-    location.title = e.places[0].address;
-
-    // Drop or move the annotation
-    setAnnotation(location);
-
-    // center the map on the annotation
-    if (center) {
-      centerMap(location);
-    }
-  });
-}
 
 /**
  * Adds the location to the collection, triggering data-binding to update the map.
@@ -192,7 +161,47 @@ function centerMap(location) {
   $.map.region = {
     latitude: location.latitude,
     longitude: location.longitude,
-    latitudeDelta: 7,
-    longitudeDelta: 7
+    latitudeDelta: 0.015,
+    longitudeDelta: 0.015
   };
 }
+
+$.map.region = {
+	latitude:55.403756,
+	longitude:10.40237,
+	latitudeDelta:0.022,
+	longitudeDelta:0.022
+};
+
+var mountainView = map.createAnnotation({
+    latitude:55.413,
+    longitude:10.405,
+    title:"Appcelerator Headquarters",
+    subtitle:'Mountain View, CA',
+    pincolor:map.ANNOTATION_RED,
+    animate:true,
+    myid:1 // Custom property to uniquely identify this annotation.
+});
+
+var mountainView1 = map.createAnnotation({
+    latitude:55.409,
+    longitude:10.402,
+    title:"Headquarters",
+    subtitle:'Mountain View, CA',
+    pincolor:map.ANNOTATION_RED,
+    animate:true,
+    myid:2 // Custom property to uniquely identify this annotation.
+});
+var mountainView2 = map.createAnnotation({
+    latitude:55.412,
+    longitude:10.409,
+    title:"Appcelerator",
+    subtitle:'Mountain View, CA',
+    pincolor:map.ANNOTATION_RED,
+    animate:true,
+    myid:3 // Custom property to uniquely identify this annotation.
+});
+
+$.map.addAnnotation(mountainView);
+$.map.addAnnotation(mountainView1);
+$.map.addAnnotation(mountainView2);

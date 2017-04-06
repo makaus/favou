@@ -10,12 +10,12 @@
 			
 			</View>
 			<View>
-	        <View module="ti.map" id="map" onLongclick="reverseGeocode">
-
-				<!-- Maps can contain child views as overlays -->
-				<Button class="typeBtn" onClick="changeMapType">Map Type</Button>
-
-			</View>
+		        <View module="ti.map" id="map" height="400">
+	
+					<!-- Maps can contain child views as overlays -->
+					<Button class="typeBtn" onClick="changeMapType">Map Type</Button>
+	
+				</View>
         	</View>
 	</Window>
 </Alloy>
