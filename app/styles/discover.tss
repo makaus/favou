@@ -7,9 +7,20 @@
 	layout: "horizontal"
 }
 
+".discover": {
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	color: "#59D3CA",
+	font: {
+		fontFamily: "Lobster_1_4",
+		fontSize: "18dp",
+		fontWeight: "bold"
+	}
+}
+
 ".label_text": {
 	font: {
-		fontWeight: "bold",
+		fontFamily: "Lobster_1_4",
+		fontSize: "16dp"
 	}
 }
 

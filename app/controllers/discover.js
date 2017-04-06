@@ -192,7 +192,7 @@ function centerMap(location) {
   $.map.region = {
     latitude: location.latitude,
     longitude: location.longitude,
-    latitudeDelta: 7,
-    longitudeDelta: 7
+    latitudeDelta: 0,
+    longitudeDelta: 0
   };
 }
