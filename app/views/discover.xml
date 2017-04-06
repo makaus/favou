@@ -1,13 +1,29 @@
-<Alloy><Window class="container" layout="vertical" onOpen="showCurrentPosition">
-			<Label class="title">Opdag</Label>
-			<View borderWidth="0.5"  class="horizontal" width="100%" height="15%">
-				<View  backgroundColor="#fff"   width="33.3%" color="#000">
+<Alloy>
+	<Window class="container" layout="vertical" onOpen="showCurrentPosition">
+			<View layout="horizontal" height="30">
+				<View width="10%"></View>
+				<View width="80%"> 
+					<Label class="discover">Opdag</Label>
+				</View>
+				<View width="10%">
+					<ImageView id="add" image="/images/plus.png"></ImageView>
+				</View>
+			</View>
+			 
+			<View borderWidth="0.5" layout="horizontal" width="100%" height="10%" top="10">
+				<View backgroundColor="#fff" borderColor="#000" width="33.3%" color="#000">
 					<Label color="#000" class="label_text">I Nærheden</Label></View>
-				<View  backgroundColor="#fff"   borderColor="#000"  width="33.3%" color="#000">
-					<Label color="#000" class="label_text">I Nærheden</Label></View>
-				<View  backgroundColor="#fff"     width="33.3%" color="#000" >
-					<Label color="#000" class="label_text">I Nærheden</Label></View>  	
-			
+				<View backgroundColor="#fff" borderColor="#000" width="33.2%" color="#000">
+					<Label color="#000" class="label_text">Favoritter</Label></View>
+				<View backgroundColor="#fff" borderColor="#000" width="33.3%" color="#000" >
+					<Label color="#000" class="label_text">Søg</Label></View>  	
+			</View>
+			<View layout="vertical">
+	        <View module="ti.map" id="map" height="200dp" onLongclick="reverseGeocode">
+
+				<!-- Maps can contain child views as overlays -->
+				<Button class="typeBtn" onClick="changeMapType">Map Type</Button>
+
 			</View>
 			<View>
 		        <View module="ti.map" id="map" height="400">
@@ -16,6 +32,7 @@
 					<Button class="typeBtn" onClick="changeMapType">Map Type</Button>
 	
 				</View>
-        	</View>
+  	</View>
+        	
 	</Window>
 </Alloy>

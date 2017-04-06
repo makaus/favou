@@ -6,7 +6,7 @@
 					<Label id="discover">Opdag</Label>
 				</View>
 				<View width="10%">
-					<ImageView id="add" image="/images/plus.png" onClick="gotoAdd"></ImageView>
+					<ImageView id="add" image="/images/plus.png" ></ImageView>
 				</View>
 			</View>
 			
