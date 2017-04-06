@@ -12,11 +12,23 @@
 			
 			<View borderWidth="0.5" layout="horizontal" width="100%" height="8%" top="1">
 				<View backgroundColor="#fff" borderColor="#000" width="33.3%" color="#000">
-					<Label color="#000" class="label_text">I Nærheden</Label></View>
+					<Label color="#000" class="label_text">I Nærheden</Label>
+				</View>
 				<View backgroundColor="#fff" borderColor="#000" width="33.2%" color="#000">
-					<Label color="#000" class="label_text">Favoritter</Label></View>
+					<Label color="#000" class="label_text">Favoritter</Label>
+				</View>
 				<View backgroundColor="#fff" borderColor="#000" width="33.3%" color="#000" >
-					<Label color="#000" class="label_text">Søg</Label></View>  	
+					<Label color="#000" class="label_text">Søg</Label>
+				</View>  	
 			</View>
+			
+			<View layout="vertical">
+	        <View module="ti.map" id="map" height="270dp">
+
+				<!-- Maps can contain child views as overlays -->
+				<Button class="typeBtn" onClick="changeMapType">Map Type</Button>
+
+			</View>
+  	</View>
 	</Window>
 </Alloy>
