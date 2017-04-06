@@ -2,11 +2,6 @@
  backgroundColor: "#192935" 
 }
 
-
-".horizontal": {
-	layout: "horizontal"
-}
-
 ".discover": {
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
 	color: "#59D3CA",

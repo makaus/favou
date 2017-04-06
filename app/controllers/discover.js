@@ -1,5 +1,10 @@
 // DEPENDENCIES
 
+function gotoAdd(e) {
+ 	var createTask = Alloy.createController('createTask').getView();
+ 	createTask.open();
+ }
+
 var map = require('ti.map');
 var permissions = require('permissions');
 
@@ -161,13 +166,8 @@ function centerMap(location) {
   $.map.region = {
     latitude: location.latitude,
     longitude: location.longitude,
-<<<<<<< HEAD
-    latitudeDelta: 0,
-    longitudeDelta: 0
-=======
     latitudeDelta: 0.015,
     longitudeDelta: 0.015
->>>>>>> fc7c5b35a55304a60f1e85325a125523c9966f01
   };
 }
 
