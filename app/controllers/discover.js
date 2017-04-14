@@ -1,3 +1,9 @@
+function gotoAdd(e) {
+
+ 		var createTask = Alloy.createController('createTask').getView();
+ 		createTask.open();
+ }
+
 // DEPENDENCIES
 
 var map = require('ti.map');
