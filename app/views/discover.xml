@@ -6,11 +6,7 @@
 					<Label class="discover">Opdag</Label>
 				</View>
 				<View width="10%">
-<<<<<<< HEAD
 					<ImageView id="add" onClick="gotoAdd" image="/images/plus.png"></ImageView>
-=======
-					<ImageView id="add" image="/images/plus.png" ></ImageView>
->>>>>>> origin/master
 				</View>
 			</View>
 			 
@@ -25,7 +21,6 @@
 					<Label color="#000" class="label_text">Søg</Label>
 				</View>  	
 			</View>
-<<<<<<< HEAD
 			<View layout="vertical">
 		        <View module="ti.map" id="map" height="200dp">
 					<!-- Maps can contain child views as overlays -->
@@ -33,7 +28,6 @@
 				</View>
   			</View>
         	
-=======
 <ScrollView layout="vertical">
 
 	<View layout="vertical">
@@ -97,8 +91,5 @@
 	</View>
 </View>
 </ScrollView>
-  	
-       
->>>>>>> origin/master
 	</Window>
 </Alloy>
