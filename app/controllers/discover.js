@@ -6,6 +6,11 @@ function gotoAdd(e) {
 
 // DEPENDENCIES
 
+function gotoAdd(e) {
+ 	var createTask = Alloy.createController('createTask').getView();
+ 	createTask.open();
+ }
+
 var map = require('ti.map');
 var permissions = require('permissions');
 
@@ -167,6 +172,9 @@ function centerMap(location) {
   $.map.region = {
     latitude: location.latitude,
     longitude: location.longitude,
+
+    latitudeDelta: 0,
+    longitudeDelta: 0,
     latitudeDelta: 0.015,
     longitudeDelta: 0.015
   };
