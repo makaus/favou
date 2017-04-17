@@ -11,8 +11,7 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-
-    <guid>39a45bb8-f808-42af-9000-cdf9e7f9ee9f</guid>
+    <guid>f22b3dd1-b467-47f5-9333-46dd817a8dfe</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <property name="run-on-main-thread" type="bool">true</property>
     <ios>
@@ -48,10 +47,10 @@
                 <activity
                     android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
                     android:label="YourAppName"
-                    android:name="com.facebook.FacebookActivity" 
-                    android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+                    android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
                 <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
-                <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAj2YhU1DriMzzzGXZsQ2rYIJq-K2_tEC0"/>
+                <meta-data
+                    android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAj2YhU1DriMzzzGXZsQ2rYIJq-K2_tEC0"/>
             </application>
         </manifest>
     </android>
@@ -64,8 +63,6 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
-        <module platform="android">hyperloop</module>
-        <module platform="iphone">hyperloop</module>
         <module platform="commonjs">ti.cloud</module>
         <module platform="android">facebook</module>
         <module platform="iphone">facebook</module>
@@ -80,7 +77,6 @@
     <sdk-version>6.0.1.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
-        <plugin>hyperloop</plugin>
     </plugins>
     <property name="appc-app-id" type="string">58e1fade195ad97a7acb34ba</property>
     <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>

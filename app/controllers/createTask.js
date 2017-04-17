@@ -21,3 +21,33 @@ $.date.addEventListener('click', function() {
 	    }
 	});
 });
+
+$.createTask.addEventListener("click", function(){
+  	var newTask = Alloy.createModel('task');
+	var params = {
+		type: 'posts', // important to set content type and mandatory fields
+		status: 'publish',
+		content : $.beskrivelseTask.value,
+		title: $.titleTask.value,
+		acf: {dato: $.dato.value,
+		personbehov: $.personBehovTask.value,
+		adresse: $.adresseTask.value},
+		categories: $.pickerCategory.value,
+		author: 1
+		
+		/*
+		dato: $.dato.value,
+		personbehov: $.personBehov.value,
+		category: $.pickerCategory.value,
+		author: "admin",
+		*/
+	};
+	newTask.save(params, {
+		success: function(model, response) {
+		Alloy.Collections.instance("task").fetch();
+		$.getView().navWindow ? $.getView().navWindow.close() : $.getView().close();
+			},
+		error: function(err) {alert(err);} 
+	});
+});
+
