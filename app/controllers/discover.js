@@ -1,15 +1,45 @@
-function gotoAdd(e) {
-
- 		var createTask = Alloy.createController('createTask').getView();
- 		createTask.open();
- }
-
 // DEPENDENCIES
+
+Alloy.Collections.instance("task").fetch();
+
+function transform(model) {
+	//convert the model to a JSON object
+	var productObject = model.toJSON();
+	var output = {
+		"id" : productObject.id,
+		"title" : productObject.title.rendered,
+		"author" : productObject._embedded.author[0].name,
+		"image" : productObject._embedded.author[0].acf.image,
+		"dato" : productObject.acf.dato,
+		"cid" : model.cid
+	};
+
+	console.log(output);
+	return output;
+}
+
 
 function gotoAdd(e) {
  	var createTask = Alloy.createController('createTask').getView();
  	createTask.open();
  }
+
+function openAsModal(_view) {
+	if (OS_IOS) {
+		var navWindow = Titanium.UI.iOS.createNavigationWindow({
+			window : _view
+		});
+
+		_view.navWindow = navWindow;
+		navWindow.open({
+			modal : true
+		});
+	} else {
+		_view.open({
+			modal : true
+		});
+	}
+}
 
 var map = require('ti.map');
 var permissions = require('permissions');

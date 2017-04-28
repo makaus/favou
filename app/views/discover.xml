@@ -1,4 +1,5 @@
 <Alloy>
+	<Collection src="task"/>
 	<Window class="container" layout="vertical" onOpen="showCurrentPosition">
 			<View layout="horizontal" height="30" top="10">
 				<View width="10%"></View>
@@ -21,75 +22,85 @@
 					<Label color="#000" class="label_text">Søg</Label>
 				</View>  	
 			</View>
+		<ScrollView layout="vertical">
 			<View layout="vertical">
-		        <View module="ti.map" id="map" height="200dp">
-					<!-- Maps can contain child views as overlays -->
-					<Button class="typeBtn" onClick="changeMapType">Map Type</Button>
+				<View module="ti.map" id="map" height="200dp" borderColor="#fff">
+			
+				<!-- Maps can contain child views as overlays -->
+			
 				</View>
-  			</View>
-        	
-<ScrollView layout="vertical">
-
-	<View layout="vertical">
-	<View module="ti.map" id="map" height="200dp" borderColor="#fff">
-
-	<!-- Maps can contain child views as overlays -->
-	<Button class="typeBtn" onClick="changeMapType">Map Type</Button>
-
-	</View>
-
-	<View  height="80dp">
-		<View layout="horizontal">
-				<ImageView left="22dp" image="/images/round.png" height="50dp" ></ImageView>	
-			<View  width="50%"  layout="vertical">
-				<View height="20dp"></View>
-				<Label   color="#59D3CA">Martin Ingeman</Label>
-				<Label color="#fff">Hjælp til flytning</Label> 
+        		<TableView id="table" dataCollection="task" dataTransform="transform">
+					<TableViewRow layout="vertical">
+						<View  height="80dp">
+							<View layout="horizontal">
+								<ImageView left="22dp" image="{image}" height="50dp" borderRadius="40" borderWidth="1"></ImageView>	
+								<View  width="50%"  layout="vertical">
+									<Label color="#59D3CA" top="20dp" left="20">{author}</Label>
+									<Label color="#fff" left="20">{title}</Label> 
+								</View>
+								<View  width="23%" layout="vertical">
+									<Label color="#fff" top="25dp">{dato}</Label> 
+								</View>
+								<View layout="horizontal" width="3%">
+									<Label color="#fff" top="25dp">></Label>
+								</View>
+							</View>
+						</View>
+	        		</TableViewRow>
+				</TableView>
+        		
+				<!--<View  height="80dp">
+					<View layout="horizontal">
+							<ImageView left="22dp" image="/images/round.png" height="50dp" ></ImageView>	
+						<View  width="50%"  layout="vertical">
+							<View height="20dp"></View>
+							<Label   color="#59D3CA">Martin Ingeman</Label>
+							<Label color="#fff">Hjælp til flytning</Label> 
+						</View>
+						<View  width="23%"   layout="vertical">
+							<View height="25dp"></View>
+							<Label color="#fff">d.22.12.16</Label> 
+						</View>
+						<View layout="horizontal" width="3%">
+							<Label color="#fff">></Label>
+						</View>
+					</View>
+				</View>
+				<View  height="80dp">
+					<View layout="horizontal">
+							<ImageView left="22dp" image="/images/round.png" height="50dp" ></ImageView>	
+						<View  width="50%"  layout="vertical">
+							<View height="20dp"></View>
+							<Label   color="#59D3CA">Martin Ingeman</Label>
+							<Label color="#fff">Hjælp til flytning</Label> 
+						</View>
+						<View  width="23%"   layout="vertical">
+							<View height="25dp"></View>
+							<Label color="#fff">d.22.12.16</Label> 
+						</View>
+						<View layout="horizontal" width="3%">
+							<Label color="#fff">></Label>
+						</View>
+					</View>
+				</View>
+				<View  height="80dp">
+					<View layout="horizontal">
+						<ImageView left="22dp" image="/images/round.png" height="50dp" ></ImageView>	
+						<View  width="50%"  layout="vertical">
+							<View height="20dp"></View>
+							<Label   color="#59D3CA">Martin Ingeman</Label>
+							<Label color="#fff">Hjælp til flytning</Label> 
+						</View>
+						<View  width="23%"   layout="vertical">
+							<View height="25dp"></View>
+							<Label color="#fff">d.22.12.16</Label> 
+						</View>
+						<View layout="horizontal" width="3%">
+							<Label color="#fff">></Label>
+						</View>
+					</View>
+				</View>-->
 			</View>
-			<View  width="23%"   layout="vertical">
-				<View height="25dp"></View>
-				<Label color="#fff">d.22.12.16</Label> 
-			</View>
-			<View layout="horizontal" width="3%">
-				<Label color="#fff">></Label>
-			</View>
-		</View>
-	</View>
-	<View  height="80dp">
-		<View layout="horizontal">
-				<ImageView left="22dp" image="/images/round.png" height="50dp" ></ImageView>	
-			<View  width="50%"  layout="vertical">
-				<View height="20dp"></View>
-				<Label   color="#59D3CA">Martin Ingeman</Label>
-				<Label color="#fff">Hjælp til flytning</Label> 
-			</View>
-			<View  width="23%"   layout="vertical">
-				<View height="25dp"></View>
-				<Label color="#fff">d.22.12.16</Label> 
-			</View>
-			<View layout="horizontal" width="3%">
-				<Label color="#fff">></Label>
-			</View>
-		</View>
-	</View>
-	<View  height="80dp">
-		<View layout="horizontal">
-				<ImageView left="22dp" image="/images/round.png" height="50dp" ></ImageView>	
-			<View  width="50%"  layout="vertical">
-				<View height="20dp"></View>
-				<Label   color="#59D3CA">Martin Ingeman</Label>
-				<Label color="#fff">Hjælp til flytning</Label> 
-			</View>
-			<View  width="23%"   layout="vertical">
-				<View height="25dp"></View>
-				<Label color="#fff">d.22.12.16</Label> 
-			</View>
-			<View layout="horizontal" width="3%">
-				<Label color="#fff">></Label>
-			</View>
-		</View>
-	</View>
-</View>
-</ScrollView>
+		</ScrollView>
 	</Window>
 </Alloy>

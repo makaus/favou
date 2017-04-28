@@ -2,6 +2,9 @@
 var args = $.args;
 var months = [ "Januar", "Februar", "Marts", "April", "Maj", "Juni", 
                "Juli", "August", "September", "Oktober", "November", "December" ];
+var realdate = 0;
+
+Alloy.Collections.instance("category").fetch();
 
 $.date.addEventListener('click', function() {
 	var picker = Ti.UI.createPicker( {
@@ -17,6 +20,9 @@ $.date.addEventListener('click', function() {
 				var selectedMonthName = months[(e.value.getMonth())];
 	            //console.log((e.value.getMonth() + 1) + '/' + e.value.getDate() + '/' + e.value.getFullYear());
 	            $.dato.text = ' ' + e.value.getDate() + ' ' + selectedMonthName + ' ' + e.value.getFullYear();
+	            realdate = e.value.getDate()+''+(e.value.getMonth()+1)+''+e.value.getFullYear();
+	            console.log(realdate);
+				console.log($.pickerCategory.getSelectedRow(0).value);
 	        }
 	    }
 	});
@@ -29,18 +35,13 @@ $.createTask.addEventListener("click", function(){
 		status: 'publish',
 		content : $.beskrivelseTask.value,
 		title: $.titleTask.value,
-		acf: {dato: $.dato.value,
-		personbehov: $.personBehovTask.value,
-		adresse: $.adresseTask.value},
-		categories: $.pickerCategory.value,
+		fields: {
+			dato: realdate,
+			personbehov: $.personBehovTask.value,
+			adresse: $.adresseTask.value
+		},
+		categories: $.pickerCategory.getSelectedRow(0).value,
 		author: 1
-		
-		/*
-		dato: $.dato.value,
-		personbehov: $.personBehov.value,
-		category: $.pickerCategory.value,
-		author: "admin",
-		*/
 	};
 	newTask.save(params, {
 		success: function(model, response) {

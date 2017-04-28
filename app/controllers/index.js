@@ -1,6 +1,3 @@
-
-Alloy.Collections.instance("task").fetch();
-
 // open tab group
 if (Ti.Platform.osname == 'android') {
 	$.login.fbProxy = Alloy.Globals.Facebook.createActivityWorker({lifecycleContainer: $.login});
@@ -49,7 +46,4 @@ var fb = require('facebook');
 	var main = Alloy.createController('main').getView();
 	main.open();
 
-
-	var main = Alloy.createController('main').getView();
-	main.open();
 // $.login.open();

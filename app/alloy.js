@@ -48,4 +48,6 @@ ACS.Users.login({
 
 // Make API calls to Alloy.Globals.Facebook
 Alloy.Globals.Facebook = require('facebook');
+Alloy.Collections.instance("task");
+Alloy.Collections.instance("category");
 

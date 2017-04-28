@@ -1,5 +1,7 @@
 <Alloy>
+	<Collection src="category"/>
 	<Window class="container" layout="vertical">
+			
 		<ScrollView layout="vertical">
 		<View width="100%" layout="vertical">
 			<Label class="createTaskLabel" width="Ti.UI.SIZE" top="20">Opret opgave</Label>
@@ -11,15 +13,15 @@
 			</View>
 			<TextField class="taskField" id="personBehovTask" hintText="Person behov" top="25" width="80%" height="40"/>
 			<!--<TextField class="taskField" hintText="Kategori" top="25" width="80%" height="40"/>-->
-			<Picker id="pickerCategory" top="25" width="80%" height="40">
-            <PickerColumn id="categoryPicker">
-                <PickerRow title="Kategori" value="0"/>
-                <PickerRow title="Musik" value="3"/>
-            </PickerColumn>
+			<Picker id="pickerCategory" top="25" width="80%" height="40" selectionIndicator="true">
+	            <Column id="categoryPicker"  dataCollection="category">
+	                <PickerRow title="{name}" value="{id}"/>
+	            </Column>
         	</Picker>
 			<TextField class="taskField" id="beskrivelseTask" hintText="Beskrivelse af opgave" top="25" width="80%" height="40"/>
 			<Button class="taskButton" id="createTask" title="Opret" top="25" height="40" width="30%"/>
 		</View>
+		
 		</ScrollView>
 	</Window>
 </Alloy>
