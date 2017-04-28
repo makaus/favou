@@ -20,7 +20,7 @@ $.date.addEventListener('click', function() {
 				var selectedMonthName = months[(e.value.getMonth())];
 	            //console.log((e.value.getMonth() + 1) + '/' + e.value.getDate() + '/' + e.value.getFullYear());
 	            $.dato.text = ' ' + e.value.getDate() + ' ' + selectedMonthName + ' ' + e.value.getFullYear();
-	            realdate = e.value.getDate()+''+(e.value.getMonth()+1)+''+e.value.getFullYear();
+	            realdate = e.value.getFullYear()+','+(e.value.getMonth()+1)+','+e.value.getDate();
 	            console.log(realdate);
 				console.log($.pickerCategory.getSelectedRow(0).value);
 	        }

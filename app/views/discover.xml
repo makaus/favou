@@ -23,7 +23,7 @@
 				</View>  	
 			</View>
 		<ScrollView layout="vertical">
-			<View layout="vertical">
+			<!--<View layout="vertical">-->
 				<View module="ti.map" id="map" height="200dp" borderColor="#fff">
 			
 				<!-- Maps can contain child views as overlays -->
@@ -100,7 +100,7 @@
 						</View>
 					</View>
 				</View>-->
-			</View>
+			<!--</View>-->
 		</ScrollView>
 	</Window>
 </Alloy>
