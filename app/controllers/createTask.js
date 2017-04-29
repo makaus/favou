@@ -4,6 +4,8 @@ var months = [ "Januar", "Februar", "Marts", "April", "Maj", "Juni",
                "Juli", "August", "September", "Oktober", "November", "December" ];
 var realdate = 0;
 
+function addZ(n){return n<10? '0'+n:''+n;}
+
 Alloy.Collections.instance("category").fetch();
 
 $.date.addEventListener('click', function() {
@@ -20,7 +22,7 @@ $.date.addEventListener('click', function() {
 				var selectedMonthName = months[(e.value.getMonth())];
 	            //console.log((e.value.getMonth() + 1) + '/' + e.value.getDate() + '/' + e.value.getFullYear());
 	            $.dato.text = ' ' + e.value.getDate() + ' ' + selectedMonthName + ' ' + e.value.getFullYear();
-	            realdate = e.value.getFullYear()+','+(e.value.getMonth()+1)+','+e.value.getDate();
+	            realdate = e.value.getFullYear()+','+addZ((e.value.getMonth()+1))+','+e.value.getDate();
 	            console.log(realdate);
 				console.log($.pickerCategory.getSelectedRow(0).value);
 	        }
@@ -41,13 +43,14 @@ $.createTask.addEventListener("click", function(){
 			adresse: $.adresseTask.value
 		},
 		categories: $.pickerCategory.getSelectedRow(0).value,
-		author: 1
+		author: 2
 	};
 	newTask.save(params, {
 		success: function(model, response) {
-		Alloy.Collections.instance("task").fetch();
-		$.getView().navWindow ? $.getView().navWindow.close() : $.getView().close();
-			},
+			//Alloy.Collections.instance("task").fetch({data: {categories:"5",_embed:"true"},processData:true});
+			Alloy.createController("discover");
+			$.getView().navWindow ? $.getView().navWindow.close() : $.getView().close();
+		},
 		error: function(err) {alert(err);} 
 	});
 });

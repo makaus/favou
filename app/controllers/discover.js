@@ -6,7 +6,35 @@ user.fetch({
         //parse to listView
         _.each(user.models, function(element, index, list){
                     userCats = element.attributes['acf'].interesser;
-					Alloy.Collections.instance("task").fetch({data: {categories:userCats,_embed:"true"}, processData:true});
+                    console.log(userCats);
+                    var task = Alloy.Collections.instance("task");
+					task.fetch({success: function(){
+						console.log(task.models);
+				        //parse to listView
+				        _.each(task.models, function(element, index, list){
+				        	Ti.API.info('tjek det her: '+element.attributes['acf'].adresse);
+							Ti.Geolocation.forwardGeocoder(element.attributes['acf'].adresse,function(e){
+								var mountainView = map.createAnnotation({
+								    latitude:e.latitude,
+								    longitude:e.longitude,
+								    title:element.attributes.title.rendered,
+								    pincolor:map.ANNOTATION_GREEN,
+								    animate:false
+								});
+								$.map.addAnnotation(mountainView);
+							});
+			    		});
+				    },
+				    error: function(){
+				        // something is wrong.. 
+				    },
+					data: {categories:userCats,_embed:"true"},
+				 	processData:true
+				 	});
+					var check = Alloy.Collections.instance("task");
+					
+					
+					
         });
     },
     error: function(){
@@ -229,7 +257,7 @@ $.map.region = {
 	latitudeDelta:0.022,
 	longitudeDelta:0.022
 };
-
+/*
 var mountainView = map.createAnnotation({
     latitude:55.413,
     longitude:10.405,
@@ -262,3 +290,4 @@ var mountainView2 = map.createAnnotation({
 $.map.addAnnotation(mountainView);
 $.map.addAnnotation(mountainView1);
 $.map.addAnnotation(mountainView2);
+*/

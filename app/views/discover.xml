@@ -39,10 +39,10 @@
 									<Label color="#fff" left="20">{title}</Label> 
 								</View>
 								<View  width="23%" layout="vertical">
-									<Label color="#fff" top="25dp">{dato}</Label> 
+									<Label color="#fff" top="40dp">{dato}</Label> 
 								</View>
 								<View layout="horizontal" width="3%">
-									<Label color="#fff" top="25dp">></Label>
+									<Label color="#fff" top="10dp">></Label>
 								</View>
 							</View>
 						</View>
