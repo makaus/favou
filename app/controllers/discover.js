@@ -1,6 +1,18 @@
 // DEPENDENCIES
-
-Alloy.Collections.instance("task").fetch();
+var user = Alloy.Collections.instance("user");
+user.fetch({
+    success: function(){
+        console.log(user.models);
+        //parse to listView
+        _.each(user.models, function(element, index, list){
+                    userCats = element.attributes['acf'].interesser;
+					Alloy.Collections.instance("task").fetch({data: {categories:userCats,_embed:"true"}, processData:true});
+        });
+    },
+    error: function(){
+        // something is wrong.. 
+    }
+});
 
 function transform(model) {
 	//convert the model to a JSON object

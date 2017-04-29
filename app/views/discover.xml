@@ -29,7 +29,7 @@
 				<!-- Maps can contain child views as overlays -->
 			
 				</View>
-        		<TableView id="table" dataCollection="task" dataTransform="transform">
+        		<TableView id="table" dataCollection="task" dataTransform="transform" height="Ti.UI.SIZE">
 					<TableViewRow layout="vertical">
 						<View  height="80dp">
 							<View layout="horizontal">
