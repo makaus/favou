@@ -1,9 +1,86 @@
 // DEPENDENCIES
+var user = Alloy.Collections.instance("user");
+user.fetch({
+    success: function(){
+        console.log(user.models);
+        //parse to listView
+        _.each(user.models, function(element, index, list){
+                    userCats = element.attributes['acf'].interesser;
+                    console.log(userCats);
+                    var task = Alloy.Collections.instance("task");
+					task.fetch({success: function(){
+						console.log(task.models);
+				        //parse to listView
+				        _.each(task.models, function(element, index, list){
+				        	Ti.API.info('tjek det her: '+element.attributes['acf'].adresse);
+							Ti.Geolocation.forwardGeocoder(element.attributes['acf'].adresse,function(e){
+								var mountainView = map.createAnnotation({
+								    latitude:e.latitude,
+								    longitude:e.longitude,
+								    title:element.attributes.title.rendered,
+								    pincolor:map.ANNOTATION_GREEN,
+								    animate:false
+								});
+								$.map.addAnnotation(mountainView);
+							});
+			    		});
+				    },
+				    error: function(){
+				        // something is wrong.. 
+				    },
+					data: {categories:userCats,_embed:"true"},
+				 	processData:true
+				 	});
+					var check = Alloy.Collections.instance("task");
+					
+					
+					
+        });
+    },
+    error: function(){
+        // something is wrong.. 
+    }
+});
+
+function transform(model) {
+	//convert the model to a JSON object
+	var productObject = model.toJSON();
+	var datoformat = new Date(productObject.acf.dato);
+	var datoformat = 'd.'+datoformat.getDate()+'.'+(datoformat.getMonth()+1)+'.'+datoformat.getFullYear().toString().substr(2,2);
+	var output = {
+		"id" : productObject.id,
+		"title" : productObject.title.rendered,
+		"author" : productObject._embedded.author[0].name,
+		"image" : productObject._embedded.author[0].acf.image,
+		"dato" : datoformat,
+		"cid" : model.cid
+	};
+	console.log(output);
+	return output;
+}
+
 
 function gotoAdd(e) {
  	var createTask = Alloy.createController('createTask').getView();
  	createTask.open();
  }
+
+function openAsModal(_view) {
+	if (OS_IOS) {
+		var navWindow = Titanium.UI.iOS.createNavigationWindow({
+			window : _view
+		});
+
+		_view.navWindow = navWindow;
+		navWindow.open({
+			modal : true
+		});
+	} else {
+		_view.open({
+			modal : true
+		});
+	}
+}
 
 var map = require('ti.map');
 var permissions = require('permissions');
@@ -180,7 +257,7 @@ $.map.region = {
 	latitudeDelta:0.022,
 	longitudeDelta:0.022
 };
-
+/*
 var mountainView = map.createAnnotation({
     latitude:55.413,
     longitude:10.405,
@@ -213,3 +290,4 @@ var mountainView2 = map.createAnnotation({
 $.map.addAnnotation(mountainView);
 $.map.addAnnotation(mountainView1);
 $.map.addAnnotation(mountainView2);
+*/
