@@ -1,4 +1,33 @@
-
 ".container" : {
-  
+	 theme:"Theme.NoActionBar"  
+}
+
+"#tasks": {
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	color: "#59D3CA",
+	font: {
+		fontFamily: "Lobster_1_4",
+		fontSize: "20dp"
+	}
+}
+
+".name": {
+	color: "#59D3CA",
+	font: {
+		fontSize: "18dp"
+	}
+}
+
+".resume": {
+	color: "white",
+	font: {
+		fontSize: "16dp"
+	}
+}
+
+".date": {
+	color: "white",
+	font: {
+		fontSize: "16dp"
+	}
 }

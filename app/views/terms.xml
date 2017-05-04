@@ -1,5 +1,7 @@
 <Alloy>
 	<Window class="container" layout="vertical">
-		<Label id="terms" top="20" width="Ti.UI.FILL">Vilkår og betingelser</Label>
+		<View height="50">
+			<Label id="terms" top="20" width="Ti.UI.FILL">Vilkår og betingelser</Label>
+		</View>
 	</Window>
 </Alloy>

@@ -1,5 +1,6 @@
 ".container" : {
-
+	backgroundColor: "#192935",
+	theme:"Theme.NoActionBar"
 }
 
 "#terms": {
