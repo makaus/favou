@@ -2,7 +2,7 @@
   
 }
 
-".discover": {
+"#discover": {
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
 	color: "#59D3CA",
 	font: {
@@ -11,44 +11,9 @@
 	}
 }
 
-".label_text": {
+"#settext": {
+	color: "black",
 	font: {
-		fontFamily: "Lobster_1_4",
-		fontSize: "16dp"
+		fontSize: 16
 	}
-}
-
-'#map': {
-
-	// Allow the user to rotate the map on iOS7+
-	rotatesEnabled: true,
-
-	// Show the user location
-	userLocation: true
-}
-
-'.typeBtn': {
-	width: 90,
-
-	// Same height as Android userLocation control
-	height: 38,
-
-	// Position it top left, since that's the only free corner on both iOS and Android
-	top: 11,
-	left: 11,
-
-	// FIXME: https://jira.appcelerator.org/browse/MOD-2132
-	zIndex: 1,
-
-	backgroundColor: '#CFFF',
-	borderColor: '#EEE',
-	borderWidth: 1,
-	borderRadius: 2
-}
-
-// Like in views, we can also use conditional statements in styles
-'.typeBtn[platform=android]': {
-
-	// Make it same color as the Android zoom controls
-	color: '#666'
 }
