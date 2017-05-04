@@ -1,19 +1,12 @@
 ".container" : {
-	
+
 }
 
-"#settings": {
+"#terms": {
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
 	color: "#59D3CA",
 	font: {
 		fontFamily: "Lobster_1_4",
 		fontSize: "20dp"
-	}
-}
-
-"#settext": {
-	color: "black",
-	font: {
-		fontSize: 16
 	}
 }
