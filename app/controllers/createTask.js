@@ -23,8 +23,8 @@ $.date.addEventListener('click', function() {
 	            //console.log((e.value.getMonth() + 1) + '/' + e.value.getDate() + '/' + e.value.getFullYear());
 	            $.dato.text = ' ' + e.value.getDate() + ' ' + selectedMonthName + ' ' + e.value.getFullYear();
 	            realdate = e.value.getFullYear()+','+addZ((e.value.getMonth()+1))+','+e.value.getDate();
-	            console.log(realdate);
-				console.log($.pickerCategory.getSelectedRow(0).value);
+	            //console.log(realdate);
+				//console.log($.pickerCategory.getSelectedRow(0).value);
 	        }
 	    }
 	});
@@ -43,12 +43,14 @@ $.createTask.addEventListener("click", function(){
 			adresse: $.adresseTask.value
 		},
 		categories: $.pickerCategory.getSelectedRow(0).value,
-		author: 2
+		author: userID
 	};
 	newTask.save(params, {
 		success: function(model, response) {
 			//Alloy.Collections.instance("task").fetch({data: {categories:"5",_embed:"true"},processData:true});
-			Alloy.createController("discover");
+			Alloy.Collections.user.fetch(/*{url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID}*/);
+			Alloy.Collections.task.fetch({data: {categories:userCats,_embed:"true"},processData:true});
+			//Alloy.createController("discover");
 			$.getView().navWindow ? $.getView().navWindow.close() : $.getView().close();
 		},
 		error: function(err) {alert(err);} 

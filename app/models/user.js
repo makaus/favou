@@ -1,6 +1,6 @@
 exports.definition = {
 	config: {
-		"URL": "http://markeriksen.dk/test/wp-json/wp/v2/users/"+userID,
+		"URL": "http://markeriksen.dk/test/wp-json/wp/v2/users",
 		"debug": 1,
 		"adapter": {
 			"type": "restapi",
