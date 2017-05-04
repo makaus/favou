@@ -1,0 +1,5 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+		<Label id="terms" top="20" width="Ti.UI.FILL">Vilkår og betingelser</Label>
+	</Window>
+</Alloy>
