@@ -52,4 +52,3 @@ Alloy.Globals.Facebook = require('facebook');
 Alloy.Collections.instance("task");
 Alloy.Collections.instance("category");
 Alloy.Collections.instance("user");
-
