@@ -1,19 +1,19 @@
 // DEPENDENCIES
 var user = Alloy.Collections.instance("user");
-user.fetch({
+user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
     success: function(){
-        console.log(user.models);
+        //console.log(user.models);
         //parse to listView
         _.each(user.models, function(element, index, list){
                     userCats = element.attributes['acf'].interesser;
-                    console.log(userCats);
+                    //console.log(userCats);
                     var task = Alloy.Collections.instance("task");
 					task.fetch({success: function(){
-						console.log(task.models);
+						//console.log(task.models);
 				        //parse to listView
 				        _.each(task.models, function(element, index, list){
-				        	Ti.API.info('tjek det her: '+element.attributes['acf'].adresse);
 							Ti.Geolocation.forwardGeocoder(element.attributes['acf'].adresse,function(e){
+								console.log(element.attributes['acf'].adresse);
 								var mountainView = map.createAnnotation({
 								    latitude:e.latitude,
 								    longitude:e.longitude,
@@ -31,10 +31,6 @@ user.fetch({
 					data: {categories:userCats,_embed:"true"},
 				 	processData:true
 				 	});
-					var check = Alloy.Collections.instance("task");
-					
-					
-					
         });
     },
     error: function(){
@@ -45,6 +41,7 @@ user.fetch({
 function transform(model) {
 	//convert the model to a JSON object
 	var productObject = model.toJSON();
+	//console.log(productObject);
 	var datoformat = new Date(productObject.acf.dato);
 	var datoformat = 'd.'+datoformat.getDate()+'.'+(datoformat.getMonth()+1)+'.'+datoformat.getFullYear().toString().substr(2,2);
 	var output = {
@@ -55,7 +52,7 @@ function transform(model) {
 		"dato" : datoformat,
 		"cid" : model.cid
 	};
-	console.log(output);
+	//console.log(output);
 	return output;
 }
 
