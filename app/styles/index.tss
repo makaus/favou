@@ -1,5 +1,4 @@
 "Window[platform=android]" : {
-    theme: 'Theme.NoActionBar',
     title: ""
 }
 
