@@ -7,23 +7,29 @@ user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
         _.each(user.models, function(element, index, list){
                     userCats = element.attributes['acf'].interesser;
                     //console.log(userCats);
+                    if(userCats.length<1){
+						userCats = [-1];
+					}
                     var task = Alloy.Collections.instance("task");
+                    
 					task.fetch({success: function(){
 						//console.log(task.models);
-				        //parse to listView
-				        _.each(task.models, function(element, index, list){
-							Ti.Geolocation.forwardGeocoder(element.attributes['acf'].adresse,function(e){
-								console.log(element.attributes['acf'].adresse);
-								var mountainView = map.createAnnotation({
-								    latitude:e.latitude,
-								    longitude:e.longitude,
-								    title:element.attributes.title.rendered,
-								    pincolor:map.ANNOTATION_GREEN,
-								    animate:false
+						
+				       		//parse to listView
+					        _.each(task.models, function(element, index, list){
+								Ti.Geolocation.forwardGeocoder(element.attributes['acf'].adresse,function(e){
+									console.log(element.attributes['acf'].adresse);
+									var mountainView = map.createAnnotation({
+									    latitude:e.latitude,
+									    longitude:e.longitude,
+									    title:element.attributes.title.rendered,
+									    pincolor:map.ANNOTATION_GREEN,
+									    animate:false
+									});
+									$.map.addAnnotation(mountainView);
 								});
-								$.map.addAnnotation(mountainView);
-							});
-			    		});
+				    		});
+			    		
 				    },
 				    error: function(){
 				        // something is wrong.. 
@@ -41,19 +47,20 @@ user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
 function transform(model) {
 	//convert the model to a JSON object
 	var productObject = model.toJSON();
-	//console.log(productObject);
-	var datoformat = new Date(productObject.acf.dato);
-	var datoformat = 'd.'+datoformat.getDate()+'.'+(datoformat.getMonth()+1)+'.'+datoformat.getFullYear().toString().substr(2,2);
-	var output = {
-		"id" : productObject.id,
-		"title" : productObject.title.rendered,
-		"author" : productObject._embedded.author[0].name,
-		"image" : productObject._embedded.author[0].acf.image,
-		"dato" : datoformat,
-		"cid" : model.cid
-	};
-	//console.log(output);
-	return output;
+	console.log(productObject);
+		var datoformat = new Date(productObject.acf.dato);
+		var datoformat = 'd.'+datoformat.getDate()+'.'+(datoformat.getMonth()+1)+'.'+datoformat.getFullYear().toString().substr(2,2);
+	
+		var output = {
+			"id" : productObject.id,
+			"title" : productObject.title.rendered,
+			"author" : productObject._embedded.author[0].name,
+			"image" : productObject._embedded.author[0].acf.image,
+			"dato" : datoformat,
+			"cid" : model.cid
+		};
+		//console.log(output);
+		return output;
 }
 
 

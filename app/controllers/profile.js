@@ -8,6 +8,9 @@ userTemp.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
         _.each(userTemp.models, function(element, index, list){
                     userCats = element.attributes['acf'].interesser;
                     //console.log(userCats);
+                    if(userCats.length<1){
+						userCats = [-1];
+					}
                     var category = Alloy.Collections.instance("category");
 					category.fetch({success: function(){
 						//console.log(task.models);
@@ -71,7 +74,10 @@ userTemp.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
 );
 $.row1.addEventListener("click",function(e){
     obj = e.source;
-    
+    if(userCats[0]==-1){
+    	userCats=[];
+    	console.log(userCats);
+    }    
     var doExist = userCats.indexOf(e.source.id);
 	if(doExist!==-1){
 		if(e.source.value==false){
@@ -84,7 +90,10 @@ $.row1.addEventListener("click",function(e){
 			console.log(userCats);
 		}
 	}
-    
+    if(userCats.length<1){
+    	userCats=[-1];
+    	console.log(userCats);
+    }
     
     var newCat = Alloy.createModel('user');
 	var params = {
