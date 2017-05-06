@@ -18,12 +18,13 @@
 -->
 
 <resources>
-	<style name="Theme.NoActionBar" parent="@style/Theme.AppCompat.NoTitleBar">
+<style name="Theme.NoActionBar" parent="@style/Theme.AppCompat.NoTitleBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    	<item name="android:windowFullscreen">true</item>
     </style>
 	
-    <style name="Theme.Mytheme" parent="@style/Theme.AppCompat.Light">
+    <style name="Theme.Mytheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="actionBarItemBackground">@drawable/selectable_background_mytheme</item>
         <item name="popupMenuStyle">@style/PopupMenu.Mytheme</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Mytheme</item>
@@ -33,8 +34,8 @@
         <item name="actionModeBackground">@drawable/cab_background_top_mytheme</item>
         <item name="actionModeSplitBackground">@drawable/cab_background_bottom_mytheme</item>
         <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Mytheme</item>
-        <!--<item name="android:windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>-->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
 
     <style name="ActionBar.Solid.Mytheme" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
