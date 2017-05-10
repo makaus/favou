@@ -1,0 +1,31 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+		<ScrollView layout="vertical">
+		<View  layout="vertical" height="Titanium.UI.SIZE">
+		
+			<Label top="0" height="40dp">OpgaveDetaljer</Label>
+			<Label>Hjælp til flytning søges</Label>
+			<Label color="#fff">14.02.17</Label> 
+			<ImageView  height="100" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView>
+			<Label color="#fff">Lars Jensen</Label>
+			<Button>Gruppechat</Button>
+			<View height="20dp"  layout="horizontal"><Label>Kategori: </Label><Label color="#fff"> Private</Label></View>
+			<View height="20dp" layout="horizontal"><Label>Adresse: </Label><Label color="#fff"> Klokkestøbervej 3, 5000 Odense</Label></View>
+			<View height="20dp" layout="horizontal"><Label>Antal Personer: </Label><Label color="#fff"> 3</Label></View>
+			<View height="Titanium.UI.SIZE"  layout="horizontal"><Label>Beskrivelse: </Label><Label color="#fff"> Her kan stå en lang neeskrivelse af hvad opgaven går ud på.</Label></View>
+			
+			
+			
+		</View>
+		<View layout="vertical" > 
+			<Label>Deltagere</Label>
+			<View layout="horizontal" width="100%">
+				<View left="12%"  width="80dp" layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>
+						<View  width="80dp"  layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>
+						<View  width="80dp	" layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>
+				
+			</View>
+		</View>
+		</ScrollView>
+	</Window>
+</Alloy>
