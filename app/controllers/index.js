@@ -9,6 +9,21 @@ var fb = require('facebook');
  fb.authorize();
   
 var fb = require('facebook');
+fb.requestWithGraphPath('me', {}, 'GET', function(e) {
+	if (e.success) {
+        //alert(e.result);
+        var results = JSON.parse(e.result);
+        var fbID = results.id;
+        fbImageURL= 'http://graph.facebook.com/'+fbID+'/picture';
+        console.log(fbImageURL);
+        
+		
+    	var main = Alloy.createController('main').getView();
+		main.open();
+        }else {
+    }
+});
+
     fb.addEventListener('login', function(event) {
         // You *will* get this event if loggedIn == false below
         // Make sure to handle all possible cases of this event
@@ -43,7 +58,12 @@ var fb = require('facebook');
     fb.addEventListener('logout', function(e) {
         alert('logged out');
     });
+<<<<<<< HEAD
 	var main = Alloy.createController('taskDetail').getView();
 	main.open();
+=======
+	//var main = Alloy.createController('main').getView();
+	//main.open();
+>>>>>>> e2335ab48235431dc7aa0bddbcf87685d24862b3
 
-// $.login.open();
+$.login.open();

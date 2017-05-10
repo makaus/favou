@@ -18,8 +18,13 @@
 -->
 
 <resources>
-
-    <style name="Theme.Mytheme" parent="@style/Theme.AppCompat.Light">
+<style name="Theme.NoActionBar" parent="@style/Theme.AppCompat.NoTitleBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    	<item name="android:windowFullscreen">true</item>
+    </style>
+	
+    <style name="Theme.Mytheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="actionBarItemBackground">@drawable/selectable_background_mytheme</item>
         <item name="popupMenuStyle">@style/PopupMenu.Mytheme</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Mytheme</item>

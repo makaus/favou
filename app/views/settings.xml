@@ -1,24 +1,30 @@
 <Alloy>
 	<Window class="container" layout="vertical">
-		<Label id="discover" top="20" width="Ti.UI.FILL">Indstillinger</Label>
-		
-		<View height="250" width="330" backgroundColor="white" borderRadius="10" top="50">
-			<View layout="vertical">
-				<View layout="horizontal" height="50" borderColor="#59D3CA" width="90%" top="25">
-					<Label id="settext" top="14" left="15">Lydstyrke</Label>
-					<Switch id="volume" value="false" top="11" left="163"/>
-				</View>
-				
-				<View layout="horizontal" height="50" borderColor="#59D3CA" width="90%" top="20">
-					<Label id="settext" top="14" left="15">Push notifikationer</Label>
-					<Switch id="push" value="false" top="11" left="96"/>
-				</View>
-				
-				<View layout="horizontal" height="50" borderColor="#59D3CA" width="90%" top="20">
-					<Label id="settext" top="14" left="15">Vilkår og betingelser</Label>
-					<ImageView image="/images/right-arrow.png" height="27" width="17" top="12" left="105"></ImageView>
+		<ScrollView layout="vertical">
+			<Label id="settings" top="20" width="Ti.UI.FILL">Indstillinger</Label>
+			
+			<View height="300" width="330" backgroundColor="white" borderRadius="10" top="50">
+				<View layout="vertical">
+					<View layout="horizontal" height="50" borderColor="#59D3CA" width="90%" top="25">
+						<Label id="settext" top="14" left="15">Lydstyrke</Label>
+						<Slider class="slider" top="17" min="0" max="100" width="170" left="43" value="50"/>
+					</View>
+					
+					<View layout="horizontal" height="50" borderColor="#59D3CA" width="90%" top="20">
+						<Label id="settext" top="14" left="15">Push notifikationer</Label>
+						<Switch id="push" value="false" top="11" left="96"/>
+					</View>
+					
+					<View layout="horizontal" height="50" borderColor="#59D3CA" width="90%" top="20" onClick="termsPage">
+						<Label id="settext" top="14" left="15">Vilkår og betingelser</Label>
+						<ImageView image="/images/right-arrow.png" height="27" width="17" top="12" left="105"></ImageView>
+					</View>
+					
+					<View>
+						<LoginButton id="fbLogin" module="facebook" top="27" width="50%"/>
+					</View>
 				</View>
 			</View>
-		</View>
+		</ScrollView>
 	</Window>
 </Alloy>
