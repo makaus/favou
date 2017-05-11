@@ -6,54 +6,25 @@ function gotoAdd(e) {
  	createTask.open();
 }
 
-
 var assigned = Alloy.Collections.instance("assigned");
 var user = Alloy.Collections.instance("user");
 
 user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
     success: function(){
-        //console.log(user.models);
-        //parse to listView
         _.each(user.models, function(element, index, list){
                     usersAssigned = element.attributes['acf'].tilmeldte;
                     usersTasks = [];
                     for(var i=0; i<usersAssigned.length; i++){
                     	usersTasks[i] = usersAssigned[i].ID;
                     }
-                    if(usersAssigned.length<1){
-						usersAssigned = [-1];
-					}
-                    
-					assigned.fetch({success: function(){
-						//console.log(assigned.models);
-						
-				       		//parse to listView
-					        _.each(assigned.models, function(element, index, list){
-								//var exists = usersAssigned.indexOf(element.attributes.id);
-								var userExists = usersTasks.indexOf(element.attributes.id);
-								if(userExists!==-1){
-									console.log("hej");
-									console.log(element.attributes.title.rendered + '+' + element.attributes._embedded.author[0].name);
-									var datoformat = new Date(element.attributes['acf'].dato);
-									var datoformat = 'd.'+datoformat.getDate()+'.'+addZ((datoformat.getMonth()+1))+'.'+datoformat.getFullYear().toString().substr(2,2);
-									console.log(datoformat);
-									console.log(assigned.models);
-								}
-				    		});
-			    		
-				    },
-				    error: function(){
-				        // something is wrong.. 
-				    },
-					data: {_embed:"true"},
-				 	processData:true
-				 	});
         });
     },
     error: function(){
         // something is wrong.. 
     }
 });
+
+assigned.fetch({data: {_embed:"true"},processData:true});
 
 function addZ(n){return n<10? '0'+n:''+n;}
 function transform(model) {
@@ -99,12 +70,11 @@ $.table.addEventListener('click', function(_event) {
 	//var model = Alloy.Collections.products.get(_event.rowData.modelId);
 
 	//create the controller and pass the model to it
-	var detailController = Alloy.createController('settings', {
+	var detailController = Alloy.createController('taskDetail', {
 		data : model
 	});
-	
 	//get view returns to root view when no view ID is provided
-	openAsModal(detailController.getView());
+	detailController.getView().open();
 
 });
 

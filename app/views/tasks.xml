@@ -16,7 +16,7 @@
 			
 			<View layout="vertical" top="50">
 				<TableView id="table" dataCollection="assigned" dataTransform="transform" dataFilter="functionFilter" height="Ti.UI.SIZE">
-					<TableViewRow layout="vertical" taskId="{ass}">
+					<TableViewRow layout="vertical" taskId="{cid}">
 						<View layout="horizontal" borderColor="#59D3CA" height="90">
 							<View width="20%">
 								<ImageView image="{image}" top="8" left="10" height="65" width="65" borderRadius="40" borderWidth="1"></ImageView>

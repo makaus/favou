@@ -62,6 +62,23 @@ function transform(model) {
 		return output;
 }
 
+$.table.addEventListener('click', function(_event) {
+
+	//get the correct approach
+	//
+	// The properties synch adapter that is provided by appcelerator does not set the model.id so get
+	// will never work. See the appcelerator documentation on Backbone Sync Adapters
+	var model = Alloy.Collections.task.getByCid(_event.rowData.taskId);
+	//var model = Alloy.Collections.products.get(_event.rowData.modelId);
+
+	//create the controller and pass the model to it
+	var detailController = Alloy.createController('taskDetail', {
+		data : model
+	});
+	//get view returns to root view when no view ID is provided
+	detailController.getView().open();
+
+});
 
 function gotoAdd(e) {
  	var createTask = Alloy.createController('createTask').getView();

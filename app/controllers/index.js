@@ -58,12 +58,5 @@ fb.requestWithGraphPath('me', {}, 'GET', function(e) {
     fb.addEventListener('logout', function(e) {
         alert('logged out');
     });
-<<<<<<< HEAD
-	var main = Alloy.createController('taskDetail').getView();
-	main.open();
-=======
-	//var main = Alloy.createController('main').getView();
-	//main.open();
->>>>>>> e2335ab48235431dc7aa0bddbcf87685d24862b3
 
 $.login.open();

@@ -1,31 +1,30 @@
 <Alloy>
-	<Window class="container" layout="vertical">
+	<Model src="task" instance="true" id="task"/>
+	<Window class="container" model="$.task" layout="vertical">
 		<ScrollView layout="vertical">
 		<View  layout="vertical" height="Titanium.UI.SIZE">
 		
 			<Label top="0" height="40dp">OpgaveDetaljer</Label>
-			<Label>Hjælp til flytning søges</Label>
-			<Label color="#fff">14.02.17</Label> 
-			<ImageView  height="100" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView>
-			<Label color="#fff">Lars Jensen</Label>
+			<Label>{$.task.title.rendered}</Label>
+			<Label color="#fff">{$.task.acf.dato}</Label> 
+			<ImageView  height="100" image="{$.task._embedded.author[0].acf.image}" borderRadius="80" borderWidth="1"></ImageView>
+			<Label color="#fff">{$.task._embedded.author[0].name}</Label>
 			<Button>Gruppechat</Button>
-			<View height="20dp"  layout="horizontal"><Label>Kategori: </Label><Label color="#fff"> Private</Label></View>
-			<View height="20dp" layout="horizontal"><Label>Adresse: </Label><Label color="#fff"> Klokkestøbervej 3, 5000 Odense</Label></View>
-			<View height="20dp" layout="horizontal"><Label>Antal Personer: </Label><Label color="#fff"> 3</Label></View>
-			<View height="Titanium.UI.SIZE"  layout="horizontal"><Label>Beskrivelse: </Label><Label color="#fff"> Her kan stå en lang neeskrivelse af hvad opgaven går ud på.</Label></View>
-			
-			
-			
+			<View height="20dp"  layout="horizontal"><Label>Kategori: </Label><Label color="#fff"> {$.task._embedded['wp:term'][0][0].name}</Label></View>
+			<View height="20dp" layout="horizontal"><Label>Adresse: </Label><Label color="#fff"> {$.task.acf.adresse}</Label></View>
+			<View height="20dp" layout="horizontal"><Label>Antal Personer: </Label><Label color="#fff"> {$.task.acf.personbehov}</Label></View>
+			<View height="Titanium.UI.SIZE"  layout="horizontal"><Label>Beskrivelse: </Label><Label color="#fff"> {$.task.content.rendered}</Label></View>	
 		</View>
-		<View layout="vertical" > 
+		<View layout="vertical" height="Ti.UI.SIZE"> 
 			<Label>Deltagere</Label>
-			<View layout="horizontal" width="100%">
-				<View left="12%"  width="80dp" layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>
-						<View  width="80dp"  layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>
-						<View  width="80dp	" layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>
-				
+			<View layout="horizontal" width="100%" id="usersImg" height="Ti.UI.SIZE">
+			<!--<View left="12%"  width="80dp" layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>
+				<View  width="80dp"  layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>
+				<View  width="80dp	" layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>
+			-->
 			</View>
 		</View>
+		<Button id="assign" onClick="updateUser">Fyldtekst</Button>
 		</ScrollView>
 	</Window>
 </Alloy>
