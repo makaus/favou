@@ -11,13 +11,14 @@ user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
     success: function(){
         _.each(user.models, function(element, index, list){
                     usersAssignedT = element.attributes['acf'].tilmeldte;
+                    console.log(element);
                     for(var i=0; i<usersAssignedT.length; i++){
                     	usersTasks[i] = usersAssignedT[i].ID;
                     }
         });
     },
     error: function(){
-        // something is wrong.. 
+        // something is wrong..
     }
 });
 var assigned = Alloy.Collections.assigned;

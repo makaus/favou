@@ -62,7 +62,7 @@ $.createTask.addEventListener("click", function(){
 	};
 	newTask.save(params, {
 		success: function(model, response) {
-			Alloy.Collections.instance('task').fetch({data: {categories:userCats,_embed:"true"},processData:true});
+			Alloy.Collections.instance('task').fetch({data: {_embed:"true"},processData:true});
 			Alloy.Collections.instance("assigned").fetch({data: {_embed:"true"},processData:true});
 			//Alloy.createController("discover");
 		},
@@ -104,8 +104,8 @@ $.createTask.addEventListener("click", function(){
 		success: function(model, response) {
 			Alloy.Collections.instance('task').fetch({data: {categories:userCats,_embed:"true"},processData:true});
 			Alloy.Collections.instance("assigned").fetch({data: {_embed:"true"},processData:true});
-			$.getView().navWindow ? $.getView().navWindow.close() : $.getView().close();
 			Alloy.Collections.instance("user").fetch();
+			$.getView().navWindow ? $.getView().navWindow.close() : $.getView().close();
 		},
 		error: function(err) {alert(err);} 
 	});
