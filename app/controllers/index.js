@@ -60,3 +60,8 @@ fb.requestWithGraphPath('me', {}, 'GET', function(e) {
     });
 
 $.login.open();
+
+Alloy.Collections.instance("task");
+Alloy.Collections.instance("category");
+Alloy.Collections.instance("user");
+Alloy.Collections.instance("assigned");

@@ -6,16 +6,13 @@ function gotoAdd(e) {
  	createTask.open();
 }
 
-var assigned = Alloy.Collections.instance("assigned");
-var user = Alloy.Collections.instance("user");
-
+var user = Alloy.Collections.user;
 user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
     success: function(){
         _.each(user.models, function(element, index, list){
-                    usersAssigned = element.attributes['acf'].tilmeldte;
-                    usersTasks = [];
-                    for(var i=0; i<usersAssigned.length; i++){
-                    	usersTasks[i] = usersAssigned[i].ID;
+                    usersAssignedT = element.attributes['acf'].tilmeldte;
+                    for(var i=0; i<usersAssignedT.length; i++){
+                    	usersTasks[i] = usersAssignedT[i].ID;
                     }
         });
     },
@@ -23,7 +20,7 @@ user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
         // something is wrong.. 
     }
 });
-
+var assigned = Alloy.Collections.assigned;
 assigned.fetch({data: {_embed:"true"},processData:true});
 
 function addZ(n){return n<10? '0'+n:''+n;}
