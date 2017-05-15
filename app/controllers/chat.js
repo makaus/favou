@@ -57,10 +57,9 @@ $.chat.on('newMessage', function (newMessageEvent) {
 $.chat.on('moremessages', function () {
 	getMoreMessages();
  });
- 
 function getMoreMessages(){
 	var rex = /(<([^>]+)>)/ig;
-	chat.fetch({data: {post:args.data},
+	chat.fetch({data: {post:args.data,per_page:99},processData:true,
 		success: function(){
 			chatCol.reset();
 	        _.each(chat.models, function(element, index, list){

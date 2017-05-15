@@ -17,7 +17,7 @@ user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
     }
 });
 var assigned = Alloy.Collections.assigned;
-assigned.fetch({data: {_embed:"true"},processData:true});
+assigned.fetch({data: {per_page:99,_embed:"true"},processData:true});
 
 function addZ(n){return n<10? '0'+n:''+n;}
 function transform(model) {
