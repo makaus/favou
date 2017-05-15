@@ -1,12 +1,12 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 var chat = Alloy.Collections.chat;
-chatCol.reset();
 var validateSender = function(model) {
     return model.get('emitter') == userID;
 };
+getMoreMessages();
 
-var msg = Alloy.createModel('chat', {
+/*var msg = Alloy.createModel('chat', {
     content: "Hej",
     emitter: userID, // Alloy.User is an object we created in alloy.js, for example
     created_at: new Date(2017, 04, 10, 10, 0, 0)
@@ -26,12 +26,8 @@ var msg3 = Alloy.createModel('chat', {
 
 chatCol.add(msg);
 chatCol.add(msg2);
-chatCol.add(msg3);
+chatCol.add(msg3);*/
 
-/*$.chatWin.init({
-    messages: Alloy.Collections.discussion,
-    validateSender: validateSender
-});*/
 
 $.chat.init({
     messages: chatCol, // required
@@ -68,9 +64,14 @@ $.chat.on('newMessage', function (newMessageEvent) {
 });
 
 $.chat.on('moremessages', function () {
+	getMoreMessages();
+ });
+ 
+function getMoreMessages(){
 	var rex = /(<([^>]+)>)/ig;
 	chat.fetch({data: {post:args.data},
 		success: function(){
+			chatCol.reset();
 			console.log("hey");
 	        _.each(chat.models, function(element, index, list){
 	        	var stripped = element.attributes.content.rendered;
@@ -87,4 +88,4 @@ $.chat.on('moremessages', function () {
 			console.log("error");
 	    }
 	});
- });
+}
