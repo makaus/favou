@@ -15,15 +15,15 @@
 			<View height="Titanium.UI.SIZE"  layout="horizontal"><Label class="form" left="5%">Beskrivelse: </Label><Label class="result" color="#fff"> {$.task.content.rendered}</Label></View>
 		</View>
 		<View layout="vertical" height="Ti.UI.SIZE"> 
-			<Label id="participants" top="15">Deltagere</Label>
-			<View layout="horizontal" width="100%" id="usersImg" height="Ti.UI.SIZE">
+			<Label id="participants" top="20">Deltagere</Label>
+			<View layout="horizontal" width="100%" id="usersImg" height="100">
 			<!--<View left="12%"  width="80dp" layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>
 				<View  width="80dp"  layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>
 				<View  width="80dp	" layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>
 			-->
 			</View>
 		</View>
-		<Button id="assign" onClick="updateUser">Fyldtekst</Button>
+		<Button id="assign" bottom="50" onClick="updateUser">Fyldtekst</Button>
 		</ScrollView>
 	</Window>
 </Alloy>

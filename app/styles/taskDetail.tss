@@ -70,5 +70,14 @@ font: {
 	}	
 }
 
-
+"#assign": {
+	backgroundColor:"#59d3ca",
+	color:"#fff",
+	borderRadius: "10",
+	height:"30dp",
+	width: "20%",
+	font: {
+		fontFamily: "Roboto-Light"
+	}
+}
 
