@@ -1,5 +1,8 @@
 <Alloy>
-	<Window class="container" id="chatWin" title="My Chat">
-		<Widget id="chat" src="ts.chat2" />
+	<Window class="container" id="chatWin" title="My Chat" layout="vertical">
+		<Label class="chats" top="20" width="Ti.UI.FILL">Indstillinger</Label>
+		<View id="chatWrapper" top="20">
+            <Widget id="chat" src="ts.chat2"></Widget>
+        </View>
 	</Window>
 </Alloy>
