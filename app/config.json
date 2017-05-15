@@ -7,5 +7,8 @@
   "os:blackberry": {},
   "os:ios": {},
   "os:mobileweb": {},
-  "os:windows": {}
+  "os:windows": {},
+  "dependencies": {
+    "ts.chat2": "0.2.0"
+	}
 }

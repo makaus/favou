@@ -137,3 +137,18 @@ function updateUser() {
 	});
 	
 }
+
+$.chat.addEventListener('click', function(_event) {
+	//create the controller and pass the model to it
+	var model = $.task.attributes.id;
+	//var model = Alloy.Collections.products.get(_event.rowData.modelId);
+
+	//create the controller and pass the model to it
+	var chatController = Alloy.createController('chat', {
+		data : model
+	});
+	//var chatController = Alloy.createController('chat');
+	//get view returns to root view when no view ID is provided
+	chatController.getView().open();
+
+});

@@ -54,3 +54,7 @@ Alloy.Collections.instance("category");
 Alloy.Collections.instance("user");
 Alloy.Collections.instance("assigned");*/
 var usersTasks = [];
+Alloy.Collections.instance("chat");
+//Alloy.Collections.discussion = Alloy.createCollection('Message');
+
+var chatCol = Alloy.createCollection("Message");

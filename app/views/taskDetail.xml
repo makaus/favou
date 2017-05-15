@@ -9,7 +9,7 @@
 			<Label color="#fff">{$.task.acf.dato}</Label> 
 			<ImageView  height="100" image="{$.task._embedded.author[0].acf.image}" borderRadius="80" borderWidth="1"></ImageView>
 			<Label color="#fff">{$.task._embedded.author[0].name}</Label>
-			<Button>Gruppechat</Button>
+			<Button id="chat">Gruppechat</Button>
 			<View height="20dp"  layout="horizontal"><Label>Kategori: </Label><Label color="#fff"> {$.task._embedded['wp:term'][0][0].name}</Label></View>
 			<View height="20dp" layout="horizontal"><Label>Adresse: </Label><Label color="#fff"> {$.task.acf.adresse}</Label></View>
 			<View height="20dp" layout="horizontal"><Label>Antal Personer: </Label><Label color="#fff"> {$.task.acf.personbehov}</Label></View>
