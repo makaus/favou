@@ -37,6 +37,10 @@ userTemp.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
 								});
 								var tempLabel = Ti.UI.createLabel({
 									class: 'text2',
+									font: {
+										fontFamily: "Roboto-Light",
+										fontSize: "14dp"
+									},
 									width: '23%',
 									color: 'white',
 									touchEnabled: 'false',
@@ -52,6 +56,10 @@ userTemp.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
 								});
 								var tempLabel = Ti.UI.createLabel({
 									class: 'text2',
+									font: {
+										fontFamily: "Roboto-Light",
+										fontSize: "14dp"
+									},
 									width: '23%',
 									color: 'white',
 									touchEnabled: 'false',
