@@ -6,29 +6,6 @@ var validateSender = function(model) {
 };
 getMoreMessages();
 
-/*var msg = Alloy.createModel('chat', {
-    content: "Hej",
-    emitter: userID, // Alloy.User is an object we created in alloy.js, for example
-    created_at: new Date(2017, 04, 10, 10, 0, 0)
-});
-
-var msg2 = Alloy.createModel('chat', {
-    content: "Hey",
-    emitter: '2', // Alloy.User is an object we created in alloy.js, for example
-    created_at: new Date(2017, 04, 10, 10, 15, 0)
-});
-
-var msg3 = Alloy.createModel('chat', {
-    content: "Hvor er du?",
-    emitter: '2', // Alloy.User is an object we created in alloy.js, for example
-    created_at: new Date(2017, 04, 10, 10, 27, 0)
-});
-
-chatCol.add(msg);
-chatCol.add(msg2);
-chatCol.add(msg3);*/
-
-
 $.chat.init({
     messages: chatCol, // required
     validateSender: validateSender, // required
@@ -54,12 +31,26 @@ $.chat.init({
 });
 
 $.chat.on('newMessage', function (newMessageEvent) {
-    var message = Alloy.createModel('Message', {
+    /*var message = Alloy.createModel('Message', {
          content: newMessageEvent.message,
          emitter: userID,
          created_at: newMessageEvent.created_at
      });
-    chatCol.add(message);
+    chatCol.add(message);*/
+   
+    var newComment = Alloy.createModel('chat');
+	var paramsC = {
+		post: args.data,
+		content : newMessageEvent.message,
+		author: userID
+	};
+	newComment.save(paramsC, {
+		success: function(model, response) {
+			getMoreMessages();
+		},
+		error: function(err) {alert(err);} 
+	});
+   
     newMessageEvent.success(); // Mandatory, to acknowledge sending the message successfully
 });
 
@@ -72,7 +63,6 @@ function getMoreMessages(){
 	chat.fetch({data: {post:args.data},
 		success: function(){
 			chatCol.reset();
-			console.log("hey");
 	        _.each(chat.models, function(element, index, list){
 	        	var stripped = element.attributes.content.rendered;
 	                    var message = Alloy.createModel('Message', {
