@@ -1,11 +1,6 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-function gotoAdd(e) {
- 	var createTask = Alloy.createController('createTask').getView();
- 	createTask.open();
-}
-
 var user = Alloy.Collections.user;
 user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
     success: function(){

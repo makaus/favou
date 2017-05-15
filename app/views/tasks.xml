@@ -3,15 +3,7 @@
 	<Window class="container" layout="vertical">
 		<ScrollView layout="vertical">
 			<View layout="horizontal" height="30" top="20">
-				<View width="10%"></View>
-				
-				<View width="80%">
-					<Label id="tasks" width="Ti.UI.FILL">Tilmeldte opgaver</Label>
-				</View>
-				
-				<View width="10%">
-					<ImageView image="/images/plus.png" onClick="gotoAdd"></ImageView>
-				</View>
+			<Label id="tasks" width="Ti.UI.FILL">Tilmeldte opgaver</Label>
 			</View>
 			
 			<View layout="vertical" top="50">
