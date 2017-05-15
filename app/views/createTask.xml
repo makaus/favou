@@ -21,7 +21,6 @@
 			<TextField class="taskField" id="beskrivelseTask" hintText="Beskrivelse af opgave" top="25" width="80%" height="40"/>
 			<Button class="taskButton" id="createTask" title="Opret" top="25" height="40" width="30%"/>
 		</View>
-		
 		</ScrollView>
 	</Window>
 </Alloy>

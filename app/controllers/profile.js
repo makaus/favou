@@ -12,7 +12,7 @@ userTemp.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
 						userCats = [-1];
 					}
                     var category = Alloy.Collections.instance("category");
-					category.fetch({success: function(){
+					category.fetch({data: {per_page:99},processData:true,success: function(){
 						//console.log(task.models);
 				        //parse to listView
 				        var newRow = 0;

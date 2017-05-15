@@ -6,7 +6,7 @@ var realdate = 0;
 
 function addZ(n){return n<10? '0'+n:''+n;}
 
-Alloy.Collections.instance("category").fetch();
+Alloy.Collections.instance("category").fetch({data: {per_page:99},processData:true});
 $.date.addEventListener('click', function() {
 	var picker = Ti.UI.createPicker( {
 	    type : Ti.UI.PICKER_TYPE_DATE
