@@ -22,11 +22,11 @@
 					<Label color="#000" class="label_text">Søg</Label>
 				</View>  	
 			</View>
-		<ScrollView layout="vertical">
 			<!--<View layout="vertical">-->
 			
 				<Module module="ti.map" id="map" height="200dp" borderColor="#fff"/>
 				
+		<ScrollView layout="vertical">
         		<TableView id="table" dataCollection="task" dataTransform="transform" height="Ti.UI.SIZE">
 					<TableViewRow layout="vertical" taskId="{cid}">
 						<View  height="80dp">
@@ -46,59 +46,6 @@
 						</View>
 	        		</TableViewRow>
 				</TableView>
-        	
-				<!--<View  height="80dp">
-					<View layout="horizontal">
-							<ImageView left="22dp" image="/images/round.png" height="50dp" ></ImageView>	
-						<View  width="50%"  layout="vertical">
-							<View height="20dp"></View>
-							<Label   color="#59D3CA">Martin Ingeman</Label>
-							<Label color="#fff">Hjælp til flytning</Label> 
-						</View>
-						<View  width="23%"   layout="vertical">
-							<View height="25dp"></View>
-							<Label color="#fff">d.22.12.16</Label> 
-						</View>
-						<View layout="horizontal" width="3%">
-							<Label color="#fff">></Label>
-						</View>
-					</View>
-				</View>
-				<View  height="80dp">
-					<View layout="horizontal">
-							<ImageView left="22dp" image="/images/round.png" height="50dp" ></ImageView>	
-						<View  width="50%"  layout="vertical">
-							<View height="20dp"></View>
-							<Label   color="#59D3CA">Martin Ingeman</Label>
-							<Label color="#fff">Hjælp til flytning</Label> 
-						</View>
-						<View  width="23%"   layout="vertical">
-							<View height="25dp"></View>
-							<Label color="#fff">d.22.12.16</Label> 
-						</View>
-						<View layout="horizontal" width="3%">
-							<Label color="#fff">></Label>
-						</View>
-					</View>
-				</View>
-				<View  height="80dp">
-					<View layout="horizontal">
-						<ImageView left="22dp" image="/images/round.png" height="50dp" ></ImageView>	
-						<View  width="50%"  layout="vertical">
-							<View height="20dp"></View>
-							<Label   color="#59D3CA">Martin Ingeman</Label>
-							<Label color="#fff">Hjælp til flytning</Label> 
-						</View>
-						<View  width="23%"   layout="vertical">
-							<View height="25dp"></View>
-							<Label color="#fff">d.22.12.16</Label> 
-						</View>
-						<View layout="horizontal" width="3%">
-							<Label color="#fff">></Label>
-						</View>
-					</View>
-				</View>-->
-			<!--</View>-->
 		</ScrollView>
 	</Window>
 </Alloy>
