@@ -6,21 +6,21 @@
 			<Label id="tasks" width="Ti.UI.FILL">Tilmeldte opgaver</Label>
 			</View>
 			
-			<View layout="vertical" top="50">
+			<View layout="vertical" top="30">
 				<TableView id="table" dataCollection="assigned" dataTransform="transform" dataFilter="functionFilter" height="Ti.UI.SIZE">
 					<TableViewRow layout="vertical" taskId="{cid}">
-						<View layout="horizontal" borderColor="#59D3CA" height="90">
+						<View layout="horizontal" borderColor="#59D3CA" height="80" width="101%">
 							<View width="20%">
-								<ImageView image="{image}" top="8" left="10" height="65" width="65" borderRadius="40" borderWidth="1"></ImageView>
+								<ImageView image="{image}" top="10" left="15" height="60" borderRadius="40" borderWidth="1"></ImageView>
 							</View>
 							
 							<View layout="vertical" width="40%">
-								<Label class="name" top="10" left="13">{author}</Label>
-								<Label class="resume" top="10" left="14">{title}</Label>
+								<Label class="name" top="13" left="13">{author}</Label>
+								<Label class="resume" top="7" left="14">{title}</Label>
 							</View>
 							
 							<View layout="vertical" width="40%">
-								<ImageView image="/images/right-arrow.png" height="15" width="10" top="16" left="120"></ImageView>
+								<ImageView image="/images/right-arrow.png" height="15" width="10" top="16" left="128"></ImageView>
 								<Label class="date" top="14">{dato}</Label>
 							</View>
 						</View>

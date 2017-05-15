@@ -40,7 +40,10 @@ backgroundColor:"#59d3ca",
 color:"#fff",
 borderRadius: "10",
 height:"30dp",
-width: "30%"
+width: "30%",
+font: {
+	fontFamily: "Roboto-Light"
+}
 }
 
 ".form": {

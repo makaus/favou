@@ -13,6 +13,7 @@
 "#settext": {
 	color: "black",
 	font: {
-		fontSize: 16
+		fontSize: 16,
+		fontFamily: "Roboto-Light"
 	}
 }

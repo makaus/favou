@@ -11,11 +11,11 @@
 				</View>
 			</View>
 			 
-			<View borderWidth="0.5" layout="horizontal" width="100%" height="8%" top="10">
+			<View borderWidth="0.5" layout="horizontal" width="101%" height="8%" top="10">
 				<View backgroundColor="#fff" borderColor="#000" width="33.3%" color="#000">
 					<Label color="#000" class="label_text">I Nærheden</Label>
 				</View>
-				<View backgroundColor="#fff" borderColor="#000" width="33.2%" color="#000">
+				<View backgroundColor="#fff" borderColor="#000" width="33.3%" color="#000">
 					<Label color="#000" class="label_text">Favoritter</Label>
 				</View>
 				<View backgroundColor="#fff" borderColor="#000" width="33.3%" color="#000" >
@@ -24,23 +24,23 @@
 			</View>
 			<!--<View layout="vertical">-->
 			
-				<Module module="ti.map" id="map" height="200dp" borderColor="#fff"/>
+				<Module module="ti.map" id="map" height="215dp"/>
 				
 		<ScrollView layout="vertical">
         		<TableView id="table" dataCollection="task" dataTransform="transform" height="Ti.UI.SIZE">
 					<TableViewRow layout="vertical" taskId="{cid}">
 						<View  height="80dp">
-							<View layout="horizontal">
-								<ImageView left="22dp" image="{image}" height="50dp" borderRadius="40" borderWidth="1"></ImageView>	
+							<View layout="horizontal" borderColor="#59D3CA" top="-1" width="101%">
+								<ImageView left="15dp" image="{image}" height="60dp" borderRadius="40" borderWidth="1"></ImageView>	
 								<View  width="50%"  layout="vertical">
-									<Label color="#59D3CA" top="20dp" left="20">{author}</Label>
-									<Label color="#fff" left="20">{title}</Label> 
+									<Label class="author" color="#59D3CA" top="15dp" left="15">{author}</Label>
+									<Label class="title" color="#fff" top="5" left="15">{title}</Label> 
 								</View>
 								<View  width="23%" layout="vertical">
-									<Label color="#fff" top="40dp">{dato}</Label> 
+									<Label class="date" color="#fff" top="44dp">{dato}</Label> 
 								</View>
 								<View layout="horizontal" width="3%">
-									<Label color="#fff" top="10dp">></Label>
+									<ImageView image="/images/right-arrow.png" height="15" width="10" top="18"></ImageView>
 								</View>
 							</View>
 						</View>

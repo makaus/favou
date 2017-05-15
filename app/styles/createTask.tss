@@ -23,13 +23,19 @@
 
 "#date":{
 	backgroundColor: "#59D3CA",
-	color: "#FFFFFF"
+	color: "#FFFFFF",
+	font: {
+		fontFamily: "Roboto-Light"
+	}
 }
 
 ".taskButton":{
 	backgroundColor: "#59D3CA",
 	color: "#FFFFFF",
-	borderRadius: 10
+	borderRadius: 10,
+	font: {
+		fontFamily: "Roboto-Light"
+	}
 }
 
 "#pickerCategory":{

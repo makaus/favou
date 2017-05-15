@@ -25,5 +25,8 @@
 "#policy": {
 	width: "61%",
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
-	color: "#59D3CA"
+	color: "#59D3CA",
+	font: {
+		fontFamily: "Roboto-Light"
+	}
 }

@@ -14,20 +14,23 @@
 ".name": {
 	color: "#59D3CA",
 	font: {
-		fontSize: "18dp"
+		fontSize: "18dp",
+		fontFamily: "Roboto-Light"
 	}
 }
 
 ".resume": {
 	color: "white",
 	font: {
-		fontSize: "16dp"
+		fontSize: "16dp",
+		fontFamily: "Roboto-Light"
 	}
 }
 
 ".date": {
 	color: "white",
 	font: {
-		fontSize: "16dp"
+		fontSize: "15dp",
+		fontFamily: "Roboto-Light"
 	}
 }

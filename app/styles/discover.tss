@@ -54,3 +54,24 @@
 	// Make it same color as the Android zoom controls
 	color: '#666'
 }
+
+".author": {
+	font: {
+		fontFamily: "Roboto-Light",
+		fontSize: "18dp"
+	}
+}
+
+".title": {
+	font: {
+		fontFamily: "Roboto-Light",
+		fontSize: "16dp"
+	}
+}
+
+".date": {
+	font: {
+		fontFamily: "Roboto-Light",
+		fontSize: "15dp"
+	}
+}

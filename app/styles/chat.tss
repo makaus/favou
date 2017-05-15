@@ -6,5 +6,8 @@
 "#chat" : {
 	backgroundColor: "#192935",
     height: Ti.UI.FILL,
-    width: Ti.UI.FILL
+    width: Ti.UI.FILL,
+    font: {
+    	fontFamily: "Roboto-Light"
+    }
 }
