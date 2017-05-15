@@ -9,7 +9,7 @@ getMoreMessages();
 $.chat.init({
     messages: chatCol, // required
     validateSender: validateSender, // required
-    delay: 700,
+    //delay: 700,
     backgroundColor: '#192935',
     backgroundColorLeft: '#FFFFFF',
     backgroundColorRight: '#FFFFFF',
