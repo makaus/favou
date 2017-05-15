@@ -5,15 +5,66 @@ backgroundColor: "#192935",
 }
 
 
-"Label":{
-color: "#59d3ca"	
+".taskdetails":{
+color: "#59d3ca",
+font: {
+		fontFamily: "Lobster_1_4",
+		fontSize: "20dp"
+	}	
 }
 
-"Button":{
+".tasktitle": {
+	color: "#59d3ca",
+	font: {
+		fontFamily: "Roboto-Light",
+		fontSize: "23dp"
+	}
+}
+
+"#date": {
+	font: {
+		fontSize: "18dp",
+		fontFamily: "Roboto-Light"
+	}
+}
+
+".name": {
+	font: {
+		fontSize: "18dp",
+		fontFamily: "Roboto-Light"
+	}
+}
+
+"#chat":{
 backgroundColor:"#59d3ca",
 color:"#fff",
 borderRadius: "10",
-height:"30dp"
+height:"30dp",
+width: "30%"
+}
+
+".form": {
+	color: "#59d3ca",
+	font: {
+		fontSize: "18dp",
+		fontFamily: "Roboto-Light"
+	}
+}
+
+".result": {
+	color: "white",
+	font: {
+		fontSize: "18dp",
+		fontFamily: "Roboto-Light"
+	}
+}
+
+"#participants": {
+	color: "#59d3ca",
+	font: {
+		fontFamily: "Lobster_1_4",
+		fontSize: "20dp"
+	}	
 }
 
 

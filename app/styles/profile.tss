@@ -35,6 +35,6 @@
 	}
 }
 
-".row1": {
+"#row1": {
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }

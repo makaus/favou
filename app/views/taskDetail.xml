@@ -3,20 +3,19 @@
 	<Window class="container" model="$.task" layout="vertical">
 		<ScrollView layout="vertical">
 		<View  layout="vertical" height="Titanium.UI.SIZE">
-		
-			<Label top="0" height="40dp">OpgaveDetaljer</Label>
-			<Label>{$.task.title.rendered}</Label>
-			<Label color="#fff">{$.task.acf.dato}</Label> 
-			<ImageView  height="100" image="{$.task._embedded.author[0].acf.image}" borderRadius="80" borderWidth="1"></ImageView>
-			<Label color="#fff">{$.task._embedded.author[0].name}</Label>
-			<Button id="chat">Gruppechat</Button>
-			<View height="20dp"  layout="horizontal"><Label>Kategori: </Label><Label color="#fff"> {$.task._embedded['wp:term'][0][0].name}</Label></View>
-			<View height="20dp" layout="horizontal"><Label>Adresse: </Label><Label color="#fff"> {$.task.acf.adresse}</Label></View>
-			<View height="20dp" layout="horizontal"><Label>Antal Personer: </Label><Label color="#fff"> {$.task.acf.personbehov}</Label></View>
-			<View height="Titanium.UI.SIZE"  layout="horizontal"><Label>Beskrivelse: </Label><Label color="#fff"> {$.task.content.rendered}</Label></View>	
+			<Label class="taskdetails" top="20">Opgavedetaljer</Label>
+			<Label class="tasktitle" top="20">{$.task.title.rendered}</Label>
+			<Label id="date" color="#fff">{$.task.acf.dato}</Label> 
+			<ImageView  height="130" top="10" image="{$.task._embedded.author[0].acf.image}" borderRadius="80" borderWidth="1"></ImageView>
+			<Label class="name" color="#fff" top="5">{$.task._embedded.author[0].name}</Label>
+			<Button id="chat" top="10">Gruppechat</Button>
+			<View height="23dp" top="15" layout="horizontal"><Label class="form" left="5%">Kategori: </Label><Label class="result" color="#fff"> {$.task._embedded['wp:term'][0][0].name}</Label></View>
+			<View height="23dp" layout="horizontal"><Label class="form" left="5%">Adresse: </Label><Label class="result" color="#fff"> {$.task.acf.adresse}</Label></View>
+			<View height="23dp" layout="horizontal"><Label class="form" left="5%">Antal Personer: </Label><Label class="result" color="#fff"> {$.task.acf.personbehov}</Label></View>
+			<View height="Titanium.UI.SIZE"  layout="horizontal"><Label class="form" left="5%">Beskrivelse: </Label><Label class="result" color="#fff"> {$.task.content.rendered}</Label></View>
 		</View>
 		<View layout="vertical" height="Ti.UI.SIZE"> 
-			<Label>Deltagere</Label>
+			<Label id="participants" top="15">Deltagere</Label>
 			<View layout="horizontal" width="100%" id="usersImg" height="Ti.UI.SIZE">
 			<!--<View left="12%"  width="80dp" layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>
 				<View  width="80dp"  layout="vertical"><ImageView  height="70" image="/images/round.png" borderRadius="80" borderWidth="1"></ImageView></View>

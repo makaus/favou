@@ -11,6 +11,10 @@ var fb = require('facebook');
 fb.requestWithGraphPath('me', {}, 'GET', function(e) {
 	if (e.success) {
         //alert(e.result);
+        var results = JSON.parse(e.result);
+		            var fbID = results.id;
+		            fbImageURL= 'http://graph.facebook.com/'+fbID+'/picture';
+		            console.log(fbImageURL);
     	var main = Alloy.createController('main').getView();
 		main.open();
         }else {
@@ -59,3 +63,4 @@ Alloy.Collections.instance("task");
 Alloy.Collections.instance("category");
 Alloy.Collections.instance("user");
 Alloy.Collections.instance("assigned");
+Alloy.Collections.instance("chat");

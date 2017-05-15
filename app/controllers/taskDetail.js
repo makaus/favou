@@ -2,6 +2,11 @@
 var args = $.args;
 $.task.set(args.data);
 var usersSigned = $.task.attributes.acf.brugere;
+
+function addZ(n){return n<10? '0'+n:''+n;}
+var datoformat = new Date($.task.attributes.acf.dato);
+$.date.text = datoformat.getDate()+'.'+addZ((datoformat.getMonth()+1))+'.'+datoformat.getFullYear().toString().substr(2,2);
+
 var getUser = [];
 var userIDs = [];
 var getUserAssigns = [];
