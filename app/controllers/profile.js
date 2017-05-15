@@ -76,23 +76,19 @@ $.row1.addEventListener("click",function(e){
     obj = e.source;
     if(userCats[0]==-1){
     	userCats=[];
-    	console.log(userCats);
     }    
     var doExist = userCats.indexOf(e.source.id);
 	if(doExist!==-1){
 		if(e.source.value==false){
 			userCats.splice(doExist,1);
-			console.log(userCats);
 		}
 	}else{
 		if(e.source.value==true){
 			userCats.unshift(e.source.id);
-			console.log(userCats);
 		}
 	}
     if(userCats.length<1){
     	userCats=[-1];
-    	console.log(userCats);
     }
     
     var newCat = Alloy.createModel('user');
@@ -107,6 +103,9 @@ $.row1.addEventListener("click",function(e){
 		Alloy.Collections.user.fetch(/*{url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID}*/);
 		Alloy.Collections.task.fetch({data: {categories:userCats,_embed:"true"},processData:true});
 		//Alloy.createController("discover");
+		
+		
+		
 		},
 		error: function(err) {alert(err);} 
 	});

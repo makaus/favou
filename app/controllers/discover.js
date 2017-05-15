@@ -1,5 +1,6 @@
 // DEPENDENCIES
 var user = Alloy.Collections.instance("user");
+var task = Alloy.Collections.instance("task");
 user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
     success: function(){
         //console.log(user.models);
@@ -10,7 +11,6 @@ user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
                     if(userCats.length<1){
 						userCats = [-1];
 					}
-                    var task = Alloy.Collections.instance("task");
                     
 					task.fetch({success: function(){
 						//console.log(task.models);
@@ -18,7 +18,6 @@ user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
 				       		//parse to listView
 					        _.each(task.models, function(element, index, list){
 								Ti.Geolocation.forwardGeocoder(element.attributes['acf'].adresse,function(e){
-									console.log(element.attributes['acf'].adresse);
 									var mountainView = map.createAnnotation({
 									    latitude:e.latitude,
 									    longitude:e.longitude,
@@ -43,14 +42,13 @@ user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
         // something is wrong.. 
     }
 });
-
+function addZ(n){return n<10? '0'+n:''+n;}
 function transform(model) {
 	//convert the model to a JSON object
 	var productObject = model.toJSON();
-	console.log(productObject);
 		var datoformat = new Date(productObject.acf.dato);
-		var datoformat = 'd.'+datoformat.getDate()+'.'+(datoformat.getMonth()+1)+'.'+datoformat.getFullYear().toString().substr(2,2);
-	
+		var datoformat = 'd.'+datoformat.getDate()+'.'+addZ((datoformat.getMonth()+1))+'.'+datoformat.getFullYear().toString().substr(2,2);
+		
 		var output = {
 			"id" : productObject.id,
 			"title" : productObject.title.rendered,
@@ -59,10 +57,28 @@ function transform(model) {
 			"dato" : datoformat,
 			"cid" : model.cid
 		};
+		
 		//console.log(output);
 		return output;
 }
 
+$.table.addEventListener('click', function(_event) {
+
+	//get the correct approach
+	//
+	// The properties synch adapter that is provided by appcelerator does not set the model.id so get
+	// will never work. See the appcelerator documentation on Backbone Sync Adapters
+	var model = Alloy.Collections.task.getByCid(_event.rowData.taskId);
+	//var model = Alloy.Collections.products.get(_event.rowData.modelId);
+
+	//create the controller and pass the model to it
+	var detailController = Alloy.createController('taskDetail', {
+		data : model
+	});
+	//get view returns to root view when no view ID is provided
+	detailController.getView().open();
+
+});
 
 function gotoAdd(e) {
  	var createTask = Alloy.createController('createTask').getView();
@@ -144,7 +160,8 @@ function showCurrentPosition() {
         return alert(e.error || 'Could not find your position.');
       }
 
-      
+      console.log(e.coords);
+      centerMap(e.coords);
       
     });
   });
@@ -250,17 +267,19 @@ function centerMap(location) {
 
     latitudeDelta: 0,
     longitudeDelta: 0,
-    latitudeDelta: 0.015,
-    longitudeDelta: 0.015
+    latitudeDelta: 0.022,
+    longitudeDelta: 0.022
   };
 }
 
-$.map.region = {
+/*$.map.region = {
 	latitude:55.403756,
 	longitude:10.40237,
 	latitudeDelta:0.022,
 	longitudeDelta:0.022
-};
+};*/
+
+
 /*
 var mountainView = map.createAnnotation({
     latitude:55.413,

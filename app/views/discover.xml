@@ -24,13 +24,11 @@
 			</View>
 		<ScrollView layout="vertical">
 			<!--<View layout="vertical">-->
-				<View module="ti.map" id="map" height="200dp" borderColor="#fff">
 			
-				<!-- Maps can contain child views as overlays -->
-			
-				</View>
+				<Module module="ti.map" id="map" height="200dp" borderColor="#fff"/>
+				
         		<TableView id="table" dataCollection="task" dataTransform="transform" height="Ti.UI.SIZE">
-					<TableViewRow layout="vertical">
+					<TableViewRow layout="vertical" taskId="{cid}">
 						<View  height="80dp">
 							<View layout="horizontal">
 								<ImageView left="22dp" image="{image}" height="50dp" borderRadius="40" borderWidth="1"></ImageView>	
@@ -48,7 +46,7 @@
 						</View>
 	        		</TableViewRow>
 				</TableView>
-        		
+        	
 				<!--<View  height="80dp">
 					<View layout="horizontal">
 							<ImageView left="22dp" image="/images/round.png" height="50dp" ></ImageView>	
