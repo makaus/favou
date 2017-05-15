@@ -54,12 +54,26 @@ $.chat.init({
 });
 
 $.chat.on('newMessage', function (newMessageEvent) {
-    var message = Alloy.createModel('Message', {
+    /*var message = Alloy.createModel('Message', {
          content: newMessageEvent.message,
          emitter: userID,
          created_at: newMessageEvent.created_at
      });
-    chatCol.add(message);
+    chatCol.add(message);*/
+   
+    var newComment = Alloy.createModel('chat');
+	var paramsC = {
+		post: args.data,
+		content : newMessageEvent.message,
+		author: userID
+	};
+	newComment.save(paramsC, {
+		success: function(model, response) {
+			getMoreMessages();
+		},
+		error: function(err) {alert(err);} 
+	});
+   
     newMessageEvent.success(); // Mandatory, to acknowledge sending the message successfully
 });
 
