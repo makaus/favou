@@ -44,6 +44,11 @@ function setUsers(){
 		if($.task.attributes.author!=userObj[b].id){
 			
 			if(assignedUser!==-1){
+				var tempView = Ti.UI.createView({
+					width: '32%',
+					layout: 'vertical'
+				});
+				
 				var tempImage = Ti.UI.createImageView({
 					height: '70',
 					image: userObj[b].attributes['acf'].image,
@@ -51,7 +56,8 @@ function setUsers(){
 					borderWidth: '1',
 					top: '10'
 				});
-				$.usersImg.add(tempImage);
+				tempView.add(tempImage);
+				$.usersImg.add(tempView);
 			}
 		}else{
 		}

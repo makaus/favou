@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container" layout="vertical">
+	<Window class="container" layout="vertical" id="settings">
 		<ScrollView layout="vertical">
 			<Label id="settings" top="20" width="Ti.UI.FILL">Indstillinger</Label>
 			
