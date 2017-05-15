@@ -100,8 +100,8 @@ $.row1.addEventListener("click",function(e){
 	};
 	newCat.save(params, {
 		success: function(model, response) {
-		Alloy.Collections.user.fetch(/*{url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID}*/);
-		Alloy.Collections.task.fetch({data: {categories:userCats,_embed:"true"},processData:true});
+		Alloy.Collections.user.fetch({data: {per_page:99},processData:true}/*{url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID}*/);
+		Alloy.Collections.task.fetch({data: {categories:userCats,per_page:99,_embed:"true"},processData:true});
 		//Alloy.createController("discover");
 		
 		

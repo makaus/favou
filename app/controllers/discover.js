@@ -16,7 +16,7 @@ user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
 						userCats = [-1];
 					}
                     
-					task.fetch({success: function(){
+					task.fetch({data: {per_page:99,_embed:"true"},processData:true,success: function(){
 						//console.log(task.models);
 						
 				       		//parse to listView

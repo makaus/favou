@@ -62,8 +62,8 @@ $.createTask.addEventListener("click", function(){
 	};
 	newTask.save(params, {
 		success: function(model, response) {
-			Alloy.Collections.instance('task').fetch({data: {_embed:"true"},processData:true});
-			Alloy.Collections.instance("assigned").fetch({data: {_embed:"true"},processData:true});
+			Alloy.Collections.instance('task').fetch({data: {per_page:99,_embed:"true"},processData:true});
+			Alloy.Collections.instance("assigned").fetch({data: {per_page:99,_embed:"true"},processData:true});
 			//Alloy.createController("discover");
 		},
 		error: function(err) {alert(err);} 
@@ -88,7 +88,7 @@ $.createTask.addEventListener("click", function(){
     error: function(){
 		console.log("test");
     },
-	data: {_embed:"true"},
+	data: {per_page:99,_embed:"true"},
  	processData:true
  	});
  	
@@ -102,9 +102,9 @@ $.createTask.addEventListener("click", function(){
 	console.log(paramsUser);
 	newUser.save(paramsUser, {
 		success: function(model, response) {
-			Alloy.Collections.instance('task').fetch({data: {categories:userCats,_embed:"true"},processData:true});
-			Alloy.Collections.instance("assigned").fetch({data: {_embed:"true"},processData:true});
-			Alloy.Collections.instance("user").fetch();
+			Alloy.Collections.instance('task').fetch({data: {categories:userCats,per_page:99,_embed:"true"},processData:true});
+			Alloy.Collections.instance("assigned").fetch({data: {per_page:99,_embed:"true"},processData:true});
+			Alloy.Collections.instance("user").fetch({data: {per_page:99},processData:true});
 			$.getView().navWindow ? $.getView().navWindow.close() : $.getView().close();
 		},
 		error: function(err) {alert(err);} 
