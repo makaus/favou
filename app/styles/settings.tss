@@ -1,7 +1,7 @@
 ".container" : {
 }
 
-"#settings": {
+".settings": {
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
 	color: "#59D3CA",
 	font: {

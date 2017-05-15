@@ -1,11 +1,15 @@
 // DEPENDENCIES
-var user = Alloy.Collections.instance("user");
-var task = Alloy.Collections.instance("task");
+var user = Alloy.Collections.user;
+var task = Alloy.Collections.task;
 user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
     success: function(){
         //console.log(user.models);
         //parse to listView
         _.each(user.models, function(element, index, list){
+        	usersAssignedT = element.attributes['acf'].tilmeldte;
+    		for(var i=0; i<usersAssignedT.length; i++){
+            	usersTasks[i] = usersAssignedT[i].ID;
+            }
                     userCats = element.attributes['acf'].interesser;
                     //console.log(userCats);
                     if(userCats.length<1){

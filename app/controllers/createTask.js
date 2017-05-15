@@ -7,8 +7,6 @@ var realdate = 0;
 function addZ(n){return n<10? '0'+n:''+n;}
 
 Alloy.Collections.instance("category").fetch();
-console.log(userCats);
-console.log(Alloy.Collections.category);
 $.date.addEventListener('click', function() {
 	var picker = Ti.UI.createPicker( {
 	    type : Ti.UI.PICKER_TYPE_DATE
@@ -32,6 +30,21 @@ $.date.addEventListener('click', function() {
 });
 
 $.createTask.addEventListener("click", function(){
+	var user = Alloy.Collections.user; 
+	user.fetch({url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID,
+		    success: function(){
+		        _.each(user.models, function(element, index, list){
+                    usersAssignedT = element.attributes['acf'].tilmeldte;
+                    for(var i=0; i<usersAssignedT.length; i++){
+                    	usersTasks[i] = usersAssignedT[i].ID;
+                    }
+		        });
+		    },
+		    error: function(){
+		        // something is wrong.. 
+		    }
+	});
+	
   	var newTask = Alloy.createModel('task');
 	var params = {
 		type: 'posts', // important to set content type and mandatory fields
@@ -41,20 +54,59 @@ $.createTask.addEventListener("click", function(){
 		fields: {
 			dato: realdate,
 			personbehov: $.personBehovTask.value,
-			adresse: $.adresseTask.value
+			adresse: $.adresseTask.value,
+			brugere: userID
 		},
 		categories: $.pickerCategory.getSelectedRow(0).value,
 		author: userID
 	};
 	newTask.save(params, {
 		success: function(model, response) {
-			//Alloy.Collections.instance("task").fetch({data: {categories:"5",_embed:"true"},processData:true});
-			Alloy.Collections.user.fetch(/*{url: 'http://markeriksen.dk/test/wp-json/wp/v2/users/'+userID}*/);
-			Alloy.Collections.task.fetch({data: {categories:userCats,_embed:"true"},processData:true});
+			Alloy.Collections.instance('task').fetch({data: {_embed:"true"},processData:true});
+			Alloy.Collections.instance("assigned").fetch({data: {_embed:"true"},processData:true});
 			//Alloy.createController("discover");
+		},
+		error: function(err) {alert(err);} 
+	});
+	var tasks = Alloy.Collections.task;
+	
+	tasks.fetch({
+		success: function(){
+						console.log(tasks.models);	
+	    _.each(tasks.models, function(element, index, list){
+			if(element.attributes.title.rendered==$.titleTask.value && element.attributes.content.rendered==$.beskrivelseTask.value){
+				usersTasks.unshift(element.attributes.id);
+				console.log(usersTasks);
+				console.log("det passer");
+			}
+			console.log(element.attributes.title.rendered + ', ' + $.titleTask.value);
+			console.log(element.attributes.content.rendered + ', ' + $.beskrivelseTask.value);
+				console.log(usersTasks);
+				console.log("det passer IKKE");
+		});
+    },
+    error: function(){
+		console.log("test");
+    },
+	data: {_embed:"true"},
+ 	processData:true
+ 	});
+ 	
+ 	var newUser = Alloy.createModel('user');
+	var paramsUser = {
+		id: userID,
+		fields: {
+			tilmeldte: usersTasks
+		}
+	};
+	console.log(paramsUser);
+	newUser.save(paramsUser, {
+		success: function(model, response) {
+			Alloy.Collections.instance('task').fetch({data: {categories:userCats,_embed:"true"},processData:true});
+			Alloy.Collections.instance("assigned").fetch({data: {_embed:"true"},processData:true});
+			Alloy.Collections.instance("user").fetch();
 			$.getView().navWindow ? $.getView().navWindow.close() : $.getView().close();
 		},
 		error: function(err) {alert(err);} 
 	});
 });
-

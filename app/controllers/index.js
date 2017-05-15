@@ -8,16 +8,9 @@ var fb = require('facebook');
  fb.initialize();
  fb.authorize();
   
-var fb = require('facebook');
 fb.requestWithGraphPath('me', {}, 'GET', function(e) {
 	if (e.success) {
         //alert(e.result);
-        var results = JSON.parse(e.result);
-        var fbID = results.id;
-        fbImageURL= 'http://graph.facebook.com/'+fbID+'/picture';
-        console.log(fbImageURL);
-        
-		
     	var main = Alloy.createController('main').getView();
 		main.open();
         }else {
@@ -29,7 +22,6 @@ fb.requestWithGraphPath('me', {}, 'GET', function(e) {
         // Make sure to handle all possible cases of this event
         if (event.success) {
         	var main = Alloy.createController('main').getView();
- 			$.login.close();
  			main.open();
             // alert('login from uid: '+event.uid+', name: '+JSON.parse(event.data).name);
             // label.text = 'Logged In = ' + fb.loggedIn;
@@ -48,6 +40,7 @@ fb.requestWithGraphPath('me', {}, 'GET', function(e) {
 		        }
 	        });
             
+ 			$.login.close();
         } else if (event.cancelled) {
             // user cancelled 
             alert('cancelled');
@@ -66,3 +59,9 @@ fb.requestWithGraphPath('me', {}, 'GET', function(e) {
 	//main.open();
 
 $.login.open();
+
+
+Alloy.Collections.instance("task");
+Alloy.Collections.instance("category");
+Alloy.Collections.instance("user");
+Alloy.Collections.instance("assigned");
