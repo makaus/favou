@@ -51,7 +51,7 @@ function transform(model) {
 	//convert the model to a JSON object
 	var productObject = model.toJSON();
 		var datoformat = new Date(productObject.acf.dato);
-		var datoformat = 'd.'+datoformat.getDate()+'.'+addZ((datoformat.getMonth()+1))+'.'+datoformat.getFullYear().toString().substr(2,2);
+		var datoformat = 'd.'+addZ(datoformat.getDate())+'.'+addZ((datoformat.getMonth()+1))+'.'+datoformat.getFullYear().toString().substr(2,2);
 		
 		var output = {
 			"id" : productObject.id,
