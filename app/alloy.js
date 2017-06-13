@@ -46,7 +46,7 @@ ACS.Users.login({
 
 })();
 
-var userID = 1;
+var userID = 2;
 // Make API calls to Alloy.Globals.Facebook
 Alloy.Globals.Facebook = require('facebook');
 /*Alloy.Collections.instance("task");

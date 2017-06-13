@@ -133,3 +133,12 @@ function transform(model) {
 	//console.log(output);
 	return output;
 }
+function functionFilter(collection){
+	var showUser = [];
+	collection.each(function(model){
+		if(userID==model.get('id')){
+			showUser.push(model);
+		}
+	});
+	return showUser;
+}

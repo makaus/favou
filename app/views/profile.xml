@@ -1,7 +1,7 @@
 <Alloy>
 	<Window id="container" layout="vertical">
 		<Label id="profile" top="20" width="100%">Profil</Label>
-		<View id="top" layout="horizontal" height="40%" dataCollection="user" dataTransform="transform">
+		<View id="top" layout="horizontal" height="40%" dataCollection="user" dataTransform="transform" dataFilter="functionFilter">
 			<View id="left" width="55%">
 				<ImageView id="picture" image="{image}" height="150" top="30" borderRadius="80" borderWidth="1"></ImageView>
 			</View>
